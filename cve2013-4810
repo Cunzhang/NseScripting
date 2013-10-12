@@ -1,0 +1,25 @@
+local http=require "http"
+local shortport=require "shortport"
+local strbuf=require "strbuf"
+local table = require "table"
+
+description=[[
+Attempts to scan website file]]
+author="m0zh3"
+categories= {"default","discovery"}
+
+-- The Rule Section --
+portrule = shortport.portnumber({80,8080,8081})
+-- The Action Section --
+
+action = function(host, port)
+                local answer1=http.get(host,port,"/invoker/JMXInvokerServlet")
+                local answer2=http.get(host,port,"/invoker/EJBInvokerServlet")
+                if answer1.status == 200 then
+                        return table.concat({"[!] Apache Tomcat/JBoss EJBInvokerServlet / JMXInvokerServlet (RMI over HTTP) Marshalled Object Remote Code Execution","Reference:http://www.exploit-db.com/exploits/28713/"},"\n")
+                end
+                if answer2.status == 200 then
+                        return table.concat({"[!] Apache Tomcat/JBoss EJBInvokerServlet / JMXInvokerServlet (RMI over HTTP) Marshalled Object Remote Code Execution","Reference:http://www.exploit-db.com/exploits/28713/"},"\n")
+                end
+                return nil
+end
