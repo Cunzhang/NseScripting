@@ -21,7 +21,10 @@ local function exploit(host, port)
 	local ret = http.post(host,port,path,nil,nil,payload)
 	local body = string.lower(ret.body)
 	for s in string.gmatch(body,"m00zh33") do
-		status = "yes"
+		if "m00zh33" ~= s then
+                        status = "yes"
+                        break
+                end
 	end
 end
 
