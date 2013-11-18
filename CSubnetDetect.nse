@@ -27,6 +27,6 @@ local function get_links(body)
 end
 
 action = function(host, port)
-                response=http.get(url,port,path..host.targetname)
+                response=http.get(url,port,path..(host.targetname or host.ip))
                 return get_links(response.body)
 end
