@@ -1,12 +1,14 @@
+import sys
 import os.path
 import re
 
+infile = sys.argv[1]
 def ExtractFile( dir ):
-	p=re.compile(r'e:\MYOA\webroot')
+	p=re.compile(dir)
 	for root,dirs,files in os.walk(dir):
 		for f in files:
-			print(os.path.join(root.replace(r'e:\MYOA\webroot',''),f)).replace('\\','/')
-
+			print '\x1b[0;32m' + (os.path.join(root.replace(dir,''),f)).replace('\\','/') + '\x1b[0m'
+        
 			
 if __name__ == "__main__":
-	ExtractFile(r'e:\MYOA\webroot')
+	ExtractFile(infile)
