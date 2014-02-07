@@ -1,0 +1,23 @@
+body {background: #E2E5E6; margin: 0px; padding: 0px;}
+#Treeview{padding:0 0 0 5;}
+
+img
+{
+   cursor:hand;
+}
+
+#Treeview a
+{
+   font-size:9pt;
+   margin-left:0px;
+   padding:3 0 0 3px;
+   height:18px;
+}
+
+.MzTreeNode{
+   font-weight:bold;
+}
+
+.MzTreeLeaf{
+   
+}

@@ -1,0 +1,17 @@
+
+#body{
+   width:100%;
+   border-left:1px #154B76 solid;
+   border-right:1px #154B76 solid;
+   background: #70A4CF;
+   padding: 5px 5px 10px 5px;
+}
+
+#bottom{
+   height:80px;
+   background: url("menu_bottom_bg.png") no-repeat;
+}
+
+.moduleContainer{
+   border-bottom:1px #246191 solid;
+}

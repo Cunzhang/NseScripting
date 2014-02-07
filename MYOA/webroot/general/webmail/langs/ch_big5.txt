@@ -1,0 +1,343 @@
+###########################################
+### Big5 language translate  author	###
+### Name:violet				###
+### e-mail:violet@violet.d2g.com	###
+### web site:http://www.esalon.idv.tw	###
+###########################################
+# ***** GLOBAL VARS ****** #
+# User-friendly names to system folders
+
+inbox_extended					= 收件箱
+sent_extended					= 已发邮件箱
+trash_extended					= 垃圾箱
+
+#Navigation texts
+
+previous_text					= 上一页
+next_text					= 下一页
+
+# Mail Server Errors
+
+error_connect					= 无法连接至邮件服务器!
+error_retrieving				= 因为您的收件箱位置变更，因此无法取得此邮件。
+error_other					= 目前系统发生不明错误，请咨询您的系统管理员。
+
+#Invalid name of mailbox
+
+error_invalid_name				= 文件夹名称错误!目前此系统仅支持{A-Z};{0-9};{.}与空白键字符(目前不支持中文文件夹名称)。
+
+
+#Validations when sending mails            ;
+
+error_no_recipients		= 您至少需要输入一位(含)以上的收件人的邮件地址!
+error_compose_invalid_mail1_s	= 您输入的邮件地址格式错误!请确认邮件地址格式。
+error_compose_invalid_mail1_p	= 以下的邮件地址似乎是无效不正确的!
+error_compose_invalid_mail2_s	= 在发送此邮件之前请再次确认邮件排版内容。
+error_compose_invalid_mail2_p	= 在发送此邮件之前请再次确认邮件排版内容。
+
+
+#Confirmation of delete                    ;
+
+confirm_delete					= 您确定要删除此封邮件吗?
+
+
+# If the message no have a subject or sender;
+
+no_subject_text					= [没有主题]
+no_sender_text					= [未知的发件人]
+no_recipient_text				= [未知的收件人]
+
+
+# If the quota limit was exceeded           ;
+
+quota_exceeded					= 目前无法完成此动作!请先删除不需要的邮件<br>原因是您目前邮箱中的<B>邮件容量已经超过系统管理员所开放给您的邮件容量空间限制</B>。
+quota_usage_info				= <b>邮件容量示意图</b> <font color="#FF0000">红:使用</font> <font color="#00CC66">绿:剩余</font>
+quota_usage_used				= |您已经使用了<b>
+quota_usage_of					= </b>|最大的邮件空间限制为|<b>
+quota_usage_avail				= </b>
+
+
+#********************************************************#
+# Date Format                                            #
+# %d = day, %m = month, %y = year, %H = hour, %M = minutes    #
+# for a complete list, see http://www.php.net/strftime       #
+#********************************************************#
+
+date_format 					= 20%y-%m-%d %H:%M
+
+
+# CharSet                                                 ;
+
+default_char_set				= gb2312
+
+messages_mnu					= 收件箱
+compose_mnu					= 撰写新邮件
+refresh_mnu					= 收新邮件
+folders_mnu					= 文件夹管理
+search_mnu					= 查找邮件
+address_mnu					= 地址簿
+empty_trash_mnu					= 清除垃圾箱
+prefs_mnu					= 个人设定
+logoff_mnu 					= 退出
+
+
+
+reply_prefix					= 回复:
+forward_prefix					= 转发:
+
+reply_delimiter					= --------- 原始信息 --------
+reply_from_hea					= 发件人:
+reply_to_hea					= 收件人:
+reply_cc_hea					= 抄送:
+reply_date_hea					= 日期:
+reply_subject_hea				= 主题:
+
+# done
+
+
+# page-specific vars
+[Headers]
+
+key_hea						= 项目
+value_hea					= 内容
+
+[Folders]
+
+fld_name_hea					= 邮箱
+fld_messages_hea				= 邮件(总计/未阅读)
+fld_size_hea					= 容量大小
+fld_empty_hea					= 删除所有邮件
+fld_delete_hea					= 删除邮箱
+fld_total					= 总计:
+fld_make_new					= 建立新邮箱
+folders_to					= 邮箱管理
+
+[MessageList]
+
+messages_to					= 邮箱
+no_messages					= 目前您没有新邮件 
+
+delete_selected_mnu				= 删除所选择的邮件
+move_selected_mnu				= 移动所选择的邮件到
+delete_mnu					= 删除邮件
+move_mnu					= 移动到
+subject_hea					= 主题
+from_hea					= 发件人
+to_hea						= 收件人
+date_hea					= 日期
+size_hea					= 大小
+
+msg_you_have					= 您目前有
+msg_message					= 封邮件
+msg_messages					= 封邮件
+
+msg_more_unread					= 封未阅读
+msg_one_unread					= 封未阅读
+msg_none_unread					= 封未阅读
+msg_in_the_folder				= 目前位置在
+[Login]
+
+
+lgn_title					= 进行登录
+lgn_welcome_msg					= 请输入您的帐号密码进行登录!
+lng_user_email					= 电子邮件
+lng_user_name					= 帐    号
+lng_user_pwd					= 密    码
+lng_theme					= 选择界面
+lng_language					= 选择语言
+lng_login_btn					= 登 录
+
+
+[Newmessage]
+
+to_hea						= 收件人:
+cc_hea						= 抄送:
+bcc_hea						= 暗送:
+subject_hea					= 主题:
+address_tip					= 从地址簿新增收件人
+
+attach_hea					= 附件文件:
+attch_add_new					= 新增上传附件文件
+attch_name_hea					= 附件名称:
+attch_size					= 附件大小:
+attch_type_hea					= 附件格式:
+attch_dele_hea					= 删除文件:
+attch_no_hea					= 目前没有附件文件
+
+add_signature					= 加入签名档:
+send_text					= 发送邮件
+
+result_error					= 无法发送此封电子邮件!
+result_success					= 此封电子邮件已经顺利寄出，请按"确定"按钮返回收件箱。
+nav_continue					= 确定
+nav_back					= 上一页
+
+up_title 					= 新增附件文件
+up_information_text				= 请选择附件文件
+up_button_text					= 上传附件文件
+
+priority_text					= 优先级
+priority_low					= 低
+priority_normal					= 中
+priority_high					= 高
+
+[AdvancedEditor]
+
+adv_warning_text_mode1				= 请勿选择
+adv_warning_text_mode2				= 在您使用工具列之前
+
+adv_type_path					= 请输入网址:
+
+format_paragraph				= 文字格式
+format_h1					= 标题 1 <H1>
+format_h2					= 标题 2 <H2>
+format_h3					= 标题 3 <H3>
+format_h4					= 标题 4 <H4>
+format_h5					= 标题 5 <H5>
+format_h6					= 标题 6 <H6>
+format_pre					= 原始格式 <PRE>
+format_clear_all				= 清除格式设定
+
+format_font					= 字型
+format_size					= 大小
+	
+format_color					= 字体颜色
+format_back					= 字体背景颜色
+color_red					= 红色
+color_blue					= 蓝色
+color_green					= 绿色
+color_black					= 黑色
+color_yellow					= 黄色
+color_white					= 白色
+
+view_source					= 显示HTML源码
+text_mode					= 使用纯文字模式
+clear_format					= 清除格式
+
+priority_text					= 优先级
+
+
+
+
+[BadLogin]
+
+bdl_title					= 登录失败 
+bdl_msg						= 您无法使用目前的 帐号/密码 登录<BR>请检查是否输入正确。
+bdl_back					= 上一页
+
+
+[Error]
+
+err_title					= 登录错误
+err_msg						= 系统程序可能发生错误<br><br>请再次重新登录
+err_system_msg					= 系统信息: 
+err_exit					= 重新登录
+
+[Preferences]
+
+prf_title 					= 个人设定
+prf_general_title				= 个人一般设定
+prf_name					= 使用者姓名:
+prf_reply_to					= 回复的邮件地址:
+prf_time_zone					= 目前时区:
+prf_trash_title					= 垃圾箱设定
+prf_save_to_trash				= 将删除的邮件移至
+prf_save_only_read				= 删除<B>未阅读</b>的邮件时，<B>永久删除</B>而不会移至 
+prf_empty_on_exit				= 登出时<b>清空垃圾箱</b>
+prf_sent_title					= 发件备份设定
+prf_save_sent					= 在<B>已发邮件箱</b>中保存备份邮件 
+prf_messages_title				= 邮件显示设定
+prf_page_limit					= 每页中显示的邮件数量:
+prf_signature_title				= 签名档设定
+prf_signature					= 加入您的签名档设定(此签名将加入在您每封信尾)
+prf_auto_add_sign				= 自动在所寄出的邮件中加入签名 
+prf_save_button					= 保存设定
+prf_display_images				= 显示附件中的图片
+prf_default_editor_mode				= 编辑模式设定:
+prf_default_editor_mode_text			= "纯文字编辑模式"
+prf_default_editor_mode_html			= "HTML编辑模式"
+prf_time_to_refesh				= 自动收信时间 (分钟)
+
+[Catch]
+
+ctc_title					= 加入邮件地址到地址簿
+ctc_information					= 仅列出目前尚未存在于地址簿的邮件地址
+ctc_name					= 姓名
+ctc_email					= 邮件地址
+ctc_no_address					= 无效的邮件地址或是此邮件地址已经存在
+ctc_close					= 关闭
+ctc_save					= 保存
+
+[Readmsg]
+
+next_mnu					= 下一封
+previous_mnu					= 上一封
+back_mnu					= 返回
+reply_mnu					= 回复
+reply_all_mnu					= 全部回复
+forward_mnu					= 转发
+headers_mnu					= 查看邮件原始信息
+move_mnu					= 移动到
+delete_mnu					= 删除
+print_mnu					= 打印
+
+from_hea					= 发件人:
+to_hea						= 收件人:
+cc_hea						= 抄送:
+date_hea					= 日期:
+subject_hea					= 主题:
+attach_hea					= 附件:
+
+attch_name_hea					= 附件名称
+attch_force_hea					= 下载附件
+attch_type_hea					= 附件格式
+attch_size_hea					= 附件大小
+catch_address					= 加入邮件地址到地址簿
+
+[Search]
+
+sch_information_text				= 请输入您要查找的字串<br><B>注意!若是未阅读的邮件内容目前无法查找</B> 
+sch_button_text					= 开始查找 &gt;&gt;
+sch_subject_hea					= 主题
+sch_from_hea					= 发件人
+sch_date_hea					= 日期
+sch_body_hea					= 邮件内容
+sch_folder_hea					= 文件夹
+sch_no_results					= 没有找到符合的资料!请重新查找...
+
+
+[QuickAddress]
+
+qad_title 					= 地址簿
+qad_select_address				= 选择联系人
+qad_to						= 收件人
+qad_cc						= 抄送
+qad_bcc						= 暗送
+
+[AddressBook]
+
+# edit/display
+
+adr_title					= 地址簿
+adr_name					= 姓名
+adr_email					= 邮件地址
+adr_street					= 单位名称
+adr_city					= 电话
+adr_state					= 邮编
+adr_work					= 地址
+adr_back					= 上一页
+adr_save					= 保存
+
+# list
+
+adr_name_hea					= 姓名
+adr_email_hea					= 邮件地址
+adr_edit_hea					= 编辑
+adr_expo_hea					= 汇出
+adr_dele_hea					= 删除
+adr_new_entry					= 新增联系人
+
+
+addr_saved					= 此联系人邮件地址已经保存
+addr_added					= 此联系人邮件地址已经新增
+addr_deleted					= 此联系人邮件地址已经删除

@@ -1,0 +1,7 @@
+A:link { COLOR: #476074; TEXT-DECORATION: none;}
+A:visited { COLOR: #476074; TEXT-DECORATION: none}
+A:active  { COLOR: #476074; TEXT-DECORATION: none}
+A:hover   { COLOR: #476074; TEXT-DECORATION: none}
+
+.statusbar{ BACKGROUND: #b8d1e2; color:#476074; background-image:url("statusbar.png")}
+#user_count1{width:20pt;height:12pt;text-align:center;color:#EBBF47;FONT-WEIGHT: bold;background-color:transparent; border:0;cursor:pointer}

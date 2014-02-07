@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="gb2312" ?>
+
+<Styles>
+
+	<!-- Block Styles -->
+
+	<Style name="Marker: Yellow" element="span">
+		<Style name="background-color" value="Yellow" />
+	</Style>
+	<Style name="Marker: Green" element="span">
+		<Style name="background-color" value="Lime" />
+	</Style>
+
+	<Style name="Strong Emphasis" element="strong" />
+	<Style name="Emphasis" element="em" />
+
+	<Style name="Big" element="big" />
+	<Style name="Small" element="small" />
+	<Style name="Typewriter" element="tt" />
+
+	<Style name="Computer Code" element="code" />
+	<Style name="Keyboard Phrase" element="kbd" />
+	<Style name="Sample Text" element="samp" />
+	<Style name="Variable" element="var" />
+
+	<Style name="Deleted Text" element="del" />
+	<Style name="Inserted Text" element="ins" />
+
+	<Style name="Cited Work" element="cite" />
+	<Style name="Inline Quotation" element="q" />
+
+	<Style name="Language: RTL" element="span">
+		<Attribute name="dir" value="rtl" />
+	</Style>
+	<Style name="Language: LTR" element="span">
+		<Attribute name="dir" value="ltr" />
+	</Style>
+	<Style name="Language: RTL Strong" element="bdo">
+		<Attribute name="dir" value="rtl" />
+	</Style>
+	<Style name="Language: LTR Strong" element="bdo">
+		<Attribute name="dir" value="ltr" />
+	</Style>
+
+	<!-- Object Styles -->
+
+	<Style name="Image on Left" element="img">
+		<Attribute name="style" value="padding: 5px; margin-right: 5px" />
+		<Attribute name="border" value="2" />
+		<Attribute name="align" value="left" />
+	</Style>
+	<Style name="Image on Right" element="img">
+		<Attribute name="style" value="padding: 5px; margin-left: 5px" />
+		<Attribute name="border" value="2" />
+		<Attribute name="align" value="right" />
+	</Style>
+</Styles>

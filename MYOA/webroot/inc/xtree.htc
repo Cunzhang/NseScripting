@@ -1,0 +1,645 @@
+<public:component>
+<public:attach event="ondocumentready" onevent="initialize()" />
+<public:attach event="onmouseover" onevent="mouseover()"/>
+<public:attach event="onmouseout" onevent="mouseout()"/>
+<public:attach event="onclick" onevent="mouseclick()"/>
+<public:method name="initialize"/>
+<public:method name="redrawNode"/>
+<public property name="XmlSrc"/>
+<public property name="xname"/>
+<public property name="showButton"/>
+<script language="javascript">
+<!--
+//** Powered by MYOA
+//** XmlHttpRequest Class **/
+function XmlHttpRequest(Url)
+{
+	this.url=Url;
+	this.readystate=0;
+	this.Xmlhttp=null;
+	this.Xmldom=null;
+	this.error=false;
+}
+
+XmlHttpRequest.prototype.send=function()
+{
+	var o=this;
+	this.initialize();
+	var xmlhttp=getXMLHttpObj();
+	this.Xmlhttp=xmlhttp;
+	try{
+		with(xmlhttp)
+		{
+			onreadystatechange=function(){ o.ReadyStateChange();}
+			open("get",this.url+(/\?/g.test(this.url)?"&":"?")+"tmp="+Math.random(),true);
+			send();
+		}
+	}catch(ex){ this.error=true;this.onload();this.dispose();}
+}
+
+XmlHttpRequest.prototype.ReadyStateChange=function()
+{
+	var xmlhttp=this.Xmlhttp;
+	var _readystate=xmlhttp.readyState;
+	this.readystate=_readystate;
+	if(_readystate==4)
+	{
+		if(xmlhttp.status==200)
+		{
+			this.Xmldom=xmlhttp.responseXML;
+			if(this.Xmldom.xml=="")
+			{
+				this.error=true;
+			}
+
+		}
+		else{
+			this.error=true;
+		}
+		this.onload();
+		this.dispose();
+	}
+}
+
+XmlHttpRequest.prototype.dispose=function()
+{
+	this.Xmldom=null;
+	this.XmlHttp=null;
+}
+
+XmlHttpRequest.prototype.initialize=function()
+{
+	//do something
+}
+XmlHttpRequest.prototype.onload=function()
+{
+	//do something;
+}
+
+function getXMLHttpObj()
+{
+	var a=null;
+
+	a=new ActiveXObject("Msxml2.XMLHTTP");
+
+	if(!a)
+		a=new ActiveXObject("Microsoft.XMLHTTP");
+
+	if(!a)
+		a=new XMLHttpRequest();
+
+	return a;
+}
+
+function new_dom()
+{
+   var DomType = new Array("microsoft.xmldom","msxml.domdocument","msxml2.domdocument","msxml2.domdocument.3.0","msxml2.domdocument.4.0","msxml2.domdocument.5.0");
+   for(var i=0;i<DomType.length;i++)
+   {
+      try{
+         var a = new ActiveXObject(DomType[i]);
+         if(!a) continue;
+         return a;
+      }
+      catch(ex){}
+   }
+   return null;
+}
+
+/****************** Globe Variables ************************/
+var imgFile=new Image();imgFile.src='/images/endnode.gif';
+var imgClose=new Image();imgClose.src='/images/collapsed.gif';
+var imgOpen=new Image();imgOpen.src='/images/expanded.gif';
+element.selectedNode=null;
+var tmpClass='';
+var showButton = element.showButton==1 ? true : false;
+var loading = "加载中...";
+var unavaible = "无子项目";
+var XX=new_dom();
+/*
+try
+{
+   XX=new ActiveXObject("Microsoft.XMLDOM");
+}
+catch(ex)
+{
+   alert(ex.description);
+}
+
+if(!XX)
+{
+   try
+   {
+      XX=new ActiveXObject("msxml.domdocument");
+   }
+   catch(ex)
+   {
+      alert(ex.description);
+   }
+}
+*/
+XX.async=false;
+XX.load("/inc/xtree.xsl");
+/*************************************************/
+
+function initialize()
+{
+	element.document.body.attachEvent("onkeydown",function(){ return keydown();});
+	loadChildren(element);
+}
+
+function getElement(el,T)
+{
+	var ol=null;
+	if(!el || !el.children)
+	   return null;
+	var Children=el.children;
+	for(var i=0;i<Children.length;i++)
+	{ if(Children[i].tagName.toUpperCase()==T.toUpperCase()){ ol=Children[i];break;} }
+	return ol;
+}
+
+function mouseclick()
+{
+	var e=window.event.srcElement;
+	if(e.tagName.toUpperCase()=="A")
+	{
+		var E=e.parentNode;
+		if(E.type=="label"){
+			E=E.parentNode;
+			select(E,false,true)
+			toggle(E)
+			e.blur();
+		}
+	}
+	else if(e.type=='label')
+	{
+		e=e.parentNode;
+		select(e,true,true);
+		toggle(e);
+	}
+	else if(e.type=='img')
+	{
+		e=e.parentNode;
+		toggle(e);
+		if(e.type=='leaf')
+		{ select(e,true,true);}
+	}
+	else if(e.type=="checkbox")
+	{
+		e = e.parentNode;
+		checkedChildren(e);
+		checkedParent(e);
+	}
+}
+
+function mouseover()
+{
+	var e=window.event.srcElement;
+	if(e.tagName.toUpperCase()=="A")e=e.parentNode;
+	if(e.type=='label')
+	{
+		tmpClass=e.className;
+		e.className='MouseOver';
+	}
+}
+
+function mouseout()
+{
+	var e=window.event.srcElement;
+	if(e.tagName.toUpperCase()=="A")e=e.parentNode;
+	if(e.type=='label')
+	{
+		if(e.parentNode==selectedNode)
+		{
+			e.className='HighLight';
+		}
+		else{
+			e.className=tmpClass;
+		}
+	}
+}
+
+function toggle(el)
+{
+	if(el.type=='parent')
+	{
+		if(el.open=='true')
+			collapse(el);
+		else
+			expand(el);
+	}
+}
+
+function collapse(el)
+{
+	var tmp = getElement(el,"div");
+	if(tmp) { tmp.style.display='none';}
+	if(getElement(el,'img').src==imgOpen.src)
+	   getElement(el,'img').src=imgClose.src;
+	el.open='false';
+	delCookie(el.uid);
+}
+
+function expand(el)
+{
+	var tmp = getElement(el,"div");
+	if(tmp) { tmp.style.display='';}
+	el.open='true';
+	setCookie(el.uid,1);
+	if(getElement(el,'img').src==imgClose.src)
+	   getElement(el,'img').src=imgOpen.src;
+	if(tmp&&tmp.send=='false'){ loadChildren(tmp,el);}
+	else{
+		var Children = getChildren(el);
+		for(var i=0;Children&&i<Children.length;i++)
+		{
+			var ck = parseInt(getCookie(Children[i].uid));
+			if( ck == 1 && Children[i].type == "parent")
+			{
+				expand(Children[i]);
+			}
+			if(Children[i].uid == getCookie("selected"))
+				select(Children[i],0,false);
+		}
+		if(showButton)
+		{
+			checkedChildren(el);
+		}
+	}
+}
+
+function select(el,flag,iScroll)
+{
+	if(element.selectedNode){ getElement(element.selectedNode,'span').className=''};
+	if(getElement(el,'span'))
+	   getElement(el,'span').className='HighLight';
+	element.selectedNode=el;
+	setCookie("selected",el.uid);
+	if(flag){ openURL(el); };
+	if(!iScroll){ ScrollIntoView(el);}
+}
+
+function openURL(el)
+{
+	var oA = getElement(getElement(el,'span'),'a');
+	if(oA)
+	{
+		window.open(oA.href,oA.target);
+	}
+}
+
+function getPosition(el)
+{
+	var ex = el.offsetLeft;
+	var ey = el.offsetTop;
+	while(el = el.offsetParent)
+	{
+		ex += el.offsetLeft;
+		ey += el.offsetTop;
+	}
+	return{ left:ex,top:ey };
+}
+
+function ScrollIntoView(el)
+{
+	var objOffset = getPosition(el);
+   	var iY = objOffset.top - window.document.body.clientHeight/2;
+   	var iX = objOffset.left - 15;
+	window.scrollTo( iX , iY );
+}
+
+function loadChildren(oDiv,parentDiv)
+{
+	oDiv.send="true";
+	var x=new XmlHttpRequest(oDiv.XmlSrc);
+	var ick = getCookie(oDiv.parentElement.uid);
+	if(!ick) setCookie(oDiv.parentElement.uid,1);
+	x.initialize=function()
+	{
+		oDiv.innerHTML='<div type="leaf" class="TreeNode"><img type="img" align="absmiddle" src="'+imgFile.src+'"><span type="label"><span class="loading">'+loading+'</span></span></div>';
+	}
+	x.onload=function()
+	{
+		var load=getElement(oDiv.firstChild,'span');
+		if(x.error)
+		{
+			load.firstChild.innerHTML = unavaible;
+		}
+		else{
+			var dom=x.Xmldom.documentElement.selectSingleNode("/TreeNode");
+			if(dom.hasChildNodes()){
+				var iSelected=false;
+				if(selectedNode==load.parentNode)iSelected=true;
+				var nodeHTML=dom.transformNode(XX);//alert(nodeHTML)
+				var re=/\r\n/g;
+				nodeHTML=nodeHTML.replace(re,"");
+				oDiv.innerHTML = nodeHTML;
+				if(iSelected)
+				{
+					selectedNode=null;
+					select(oDiv.firstChild,true);
+				}
+				if(showButton)
+				{
+					checkedChildren(oDiv.parentElement);
+				}
+				else
+				{
+					var cc = oDiv.getElementsByTagName("input");
+					for(var i=0;i<cc.length;i++)
+						cc[i].style.display="none";
+				}
+				var Children = oDiv.childNodes;
+				for(var i=0;i<Children.length;i++)
+				{
+					var ck = parseInt(getCookie(Children[i].uid))
+					if( ck == 1 && Children[i].type=="parent")
+						expand(Children[i]);
+					if(String(Children[i].uid) == String(getCookie("selected")))
+						select(Children[i],0,false);
+				}
+			}
+			else{
+				if(oDiv.className.toLowerCase() == "xtree")
+				{
+				   oDiv.innerHTML="";
+				   if(element.document.getElementById("msg"))
+				      element.document.getElementById("msg").style.display="";
+				}
+				else
+				{
+				   oDiv.removeNode(load);
+				   if(parentDiv && getElement(parentDiv,'img'))
+				      getElement(parentDiv,'img').src='/images/transparent.gif';
+				}
+			}
+		}
+	}
+	x.send();
+}
+
+//** for checkboxs **/
+
+function checkedButton(objNode)
+{
+	var button = getElement(objNode,"input");
+	if(button.checked)
+		return true;
+	else
+		return false;
+}
+
+function checkedChildren(objNode)
+{
+	var Children = getChildren(objNode);
+	var Button = getElement(objNode,"input");
+	if(Children && Button)
+	{
+		var indeterminate = Button.indeterminate;
+		var isCheck = Button.checked;
+		for(var i=0;i<Children.length;i++)
+		{
+			var _button = getElement(Children[i],"input")
+			if(_button)
+			{
+				_button.indeterminate = indeterminate;
+				_button.checked = isCheck;
+				if(getElement(Children[i],"div"))
+					if(getElement(Children[i],"div").send=="true")
+						checkedChildren(Children[i]);
+			}
+		}
+	}
+}
+
+function checkedParent(objNode)
+{
+	var Parent = getParentNode(objNode);
+	var Button = getElement(objNode,"input");
+	if(Parent)
+	{
+		var Children = getChildren(Parent);
+		var count=indeterminate=0;
+		for(var i=0;i<Children.length;i++)
+		{
+			if(getElement(Children[i],"input").checked)
+			  count++;
+			if(getElement(Children[i],"input").indeterminate)
+			  indeterminate++;
+		}
+		if(count==0)
+		{
+		   getElement(Parent,"input").indeterminate=false;
+		   //getElement(Parent,"input").checked=false;
+		}
+		else if(indeterminate>0 || count>0 && count<Children.length)
+		{
+		   getElement(Parent,"input").indeterminate=true;
+		   //getElement(Parent,"input").checked=false;
+		}
+		else
+		{
+		   getElement(Parent,"input").indeterminate=false;
+		   if(getElement(Parent,"input").checked==false)
+		      getElement(Parent,"input").indeterminate=true;
+		   //getElement(Parent,"input").checked=true;
+		}
+		checkedParent(Parent);
+	}
+}
+
+//**** keyevent ****//
+
+function getParentNode(el){
+	var tmp = el.parentElement;
+	if(tmp.type=="container")return tmp.parentElement;
+	return null;
+}
+
+function getChildren(el){
+	var Ctmp=getElement(el,"div");
+	if(Ctmp){ return Ctmp.children;}
+	return null;
+}
+
+function getFirstNode(el){
+	if(el.type=="parent" && el.open=="true")
+		return getChildren(el)[0];
+	return el;
+}
+
+function getLastNode(el){
+	if(el.type=="parent" && el.open=="true"){
+		var tmp=getChildren(el);
+		var last=tmp[tmp.length-1];
+		return getLastNode(last);
+	}
+	else{
+		return el;
+	}
+}
+
+function getPreviousSibling(el){
+	var Ptmp=getParentNode(el);
+	var Ctmp;
+	if(!Ptmp)Ctmp = el.parentElement.children;
+	else Ctmp=getChildren(Ptmp);
+	for(var i=0;i<Ctmp.length;i++)
+	{ if(el == Ctmp[i])break; }
+	if(i==0){
+		if(Ptmp){ return Ptmp;}
+		else{
+			return null;
+		}
+	}
+	else{
+		if(Ctmp[i-1].open=="true"){
+			return getLastNode(Ctmp[i-1]);
+		}
+		else{
+			return Ctmp[i-1]
+		}
+	}
+}
+
+function getNextSibling(el){
+	var Ptmp=getParentNode(el);
+	var Ctmp;
+	if(!Ptmp)Ctmp=el.parentElement.children;
+	else Ctmp=getChildren(Ptmp)
+	for(var i=0;i<Ctmp.length;i++)
+	{ if(el == Ctmp[i])break; }
+	if(Ctmp.length-1==i){
+		if(Ptmp){
+			return getNextSibling(Ptmp);
+		}
+		else{
+			return null;
+		}
+	}
+	else  return Ctmp[i+1];
+}
+
+function keydown(){
+	var el = selectedNode;
+	if(!el){ select(getElement(element,'div'));return;}
+	var c=window.event.keyCode;
+	if(c==37){
+		if(el.open=="true")collapse(el);
+		else {
+			var tmp=getParentNode(el);
+			if(tmp)select(tmp,1);
+		}
+		return false
+	}
+	else if(c==38){
+		var tmp=getPreviousSibling(el);
+		if(tmp)select(tmp,1);
+		return false
+	}
+	else if(c==39 && el.type=="parent"){
+		if(el.open=="false"){
+			expand(el);
+		}
+		else {
+			select(getFirstNode(el),1);
+		}
+		return false;
+	}
+	else if(c==40){
+		if(el.open=="true" && el.type=="parent"){
+			select(getFirstNode(el),1);
+		}
+		else{
+			var tmp=getNextSibling(el);
+			if(tmp)select(tmp,1);
+		}
+		return false;
+	}
+	else if(c==13){
+		if(el.type=="parent"){
+			toggle(el);
+			select(el,1);
+			return false;
+			}
+		}
+	return true
+}
+
+/***************************************************/
+function setCookie(name,value)
+{
+    return;
+    name=xname + name;
+    var exp  = new Date();
+    exp.setTime(exp.getTime() + 24*60*60*1000);
+    document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString()+";path=/";
+}
+function getCookie(name)
+{
+   if(name==0)
+      return 1;
+   return;
+   name=xname + name;
+	 var arr = document.cookie.split("; ");
+	 for(i=0;i<arr.length;i++)
+		 if (arr[i].split("=")[0] == name)
+			 return unescape(arr[i].split("=")[1]);
+	 return null;
+}
+function delCookie(name)
+{
+    return;
+    name=xname + name;
+    var exp = new Date();
+    exp.setTime(exp.getTime() - 1);
+    var cval=getCookie(name);
+    if(cval!=null) element.document.cookie= name + "="+cval+";expires="+exp.toGMTString();
+}
+function redrawNode(id,action,text)
+{
+   if(element.document.getElementById("msg"))
+      element.document.getElementById("msg").style.display="none";
+   if(id=="" || id=="0")
+   {
+      element.innerHTML="";
+      element.selectedNode=null;
+      loadChildren(element);
+      return;
+   }
+   
+   var el=element.document.getElementById(id);//alert(el.innerHTML)
+   if(!el)
+   {
+      loadChildren(element);
+      return;
+   }
+   
+   if(action=="add" || action=="copy" || action=="cut" || action=="delete" || action=="share")
+   {
+      select(el,false,false);
+      if(getElement(el,"div"))
+      {
+         loadChildren(getElement(el,"div"), el);
+      }
+      else if(el.parentNode==element)
+      {
+         element.innerHTML="";
+         element.selectedNode=null;
+         loadChildren(element);
+      }
+      else
+      {
+         select(el.parentNode.parentNode,false,false);
+         loadChildren(el.parentNode);
+      }
+   }
+   else if(action=="rename")
+   {
+      getElement(getElement(el,'span'),'a').innerHTML=text;
+   }  
+}
+-->
+</script>
+</public:component>

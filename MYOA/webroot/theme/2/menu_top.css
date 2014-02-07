@@ -1,0 +1,41 @@
+*{margin:0px;padding:0px;}
+img{border:0px;}
+body{
+	background: #D6E4EF url('menu_top_bg.png') top left repeat-x;
+}
+#navPanel{
+	width: 100%;
+	height: 30px;
+	padding-top:2px;
+	font-size:10pt;
+}
+#navMenu{
+	float: left;
+	white-space: nowrap;
+	padding: 0px 20px;
+}
+#navMenu a
+{
+   float:left;
+	overflow:hidden;
+	color:#000000;
+	text-decoration: none;
+   padding-left:5px;
+   background: url('tab_inactive.gif') no-repeat top right;
+}
+#navMenu a span{
+   float:left;
+   cursor:hand;
+	padding: 6px 10px 6px 5px;
+}
+#navMenu a.active, #navMenu a:hover
+{
+	color:#FFFFFF;
+   font-weight:bold;
+   background: url('menu_top_hover_l.png') no-repeat top left;
+}
+#navMenu a.active span, #navMenu a:hover span
+{
+	padding: 6px 10px 6px 5px;
+   background: url('menu_top_hover_r.png') no-repeat top right;
+}

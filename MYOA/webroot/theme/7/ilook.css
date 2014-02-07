@@ -1,0 +1,69 @@
+html { overflow-y: scroll; }
+body {font-family: Tahoma,Arial,Helvetica,Sans-Serif; font-size:9pt; background: #E7F1F8; margin: 0px; padding: 0px;}
+/* other */
+img {border: none; vertical-align: middle;}
+
+a:link{color: #0066cc; text-decoration: none;}
+a:visited{color: #0066cc; text-decoration: none;}
+a:hover {color: #333333; text-decoration: underline;}
+a:active{color: #0066cc; text-decoration: underline;}
+
+ul {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+}
+
+img{
+   border:0px;
+   width:16px;
+   height:16px;
+}
+
+.L1 a:link, .L1 a:visited{
+   color: #444659;
+   font-size:9pt;
+   display: block;
+   text-decoration: none;
+   height: 24px;
+   background: url("menu1_bg.png") repeat-x;
+}
+
+.L1 a:link span, .L1 a:visited span{
+  background: url("ar.gif") no-repeat left;
+  background-position: 0 1px;
+  padding-left: 15px;
+  height:24px;
+  vertical-align:middle;
+  padding:7px 0px 0px 16px;
+  cursor:hand;
+  width:100%;
+   
+}
+.L1 a:hover{
+   color: #000000;
+   font-weight:bold;
+   background:  url("menu1_bg.png") repeat-x;
+   background-position: 0 -24px;
+}
+/*  一级菜单 active 效果  */
+.L1 a.active, .L1 a:hover.active, .L1 a:active.active, .L1 a:visited.active{
+   background:  url("menu1_bg.png") repeat-x;
+   background-position: 0 -24px;
+}
+.L1 a:link.active span, .L1 a:hover.active span, .L1 a:active.active span, .L1 a:visited.active span{
+   color: #000000;
+   font-weight:bold;
+   background: url("ad.gif") no-repeat left;
+  background-position: 0 1px;
+}
+
+.moduleContainer{display:none;background:#FFFFFF;border-bottom:1px #7D95A5 solid;}
+.moduleContainer .blank{line-height:30px;padding-left: 5px;}
+.module {margin-bottom:10px;}
+.module .header:link,
+.module .header:hover,
+.module .header:active,
+.module .header:visited
+{padding-left: 5px;line-height:25px;background:url("list_hd_bg.png");font-weight:normal;}
+.module .module_body{padding-left: 5px;}

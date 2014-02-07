@@ -1,0 +1,45 @@
+<!--
+body {font-size: 12pt; font-family:"Verdana", "Arial", "ËÎÌו"; SCROLLBAR-FACE-COLOR: rgb(158,180,214); SCROLLBAR-3DLIGHT-COLOR: rgb(158,180,214); SCROLLBAR-ARROW-COLOR:  #FFFFFF; }
+.textbox { COLOR: #000066; BACKGROUND: #F8F8F8; border:1 solid black; BORDER-BOTTOM:1px double; FONT-SIZE: 12pt; FONT-STYLE: normal; FONT-VARIANT: normal; FONT-WEIGHT: normal; HEIGHT: 22px; LINE-HEIGHT: normal}
+input.BigStatic  { FONT-FAMILY: MS SONG,SimSun,tahoma,sans-serif; COLOR: #000066; BACKGROUND: #E0E0E0; border:1 solid black; BORDER-BOTTOM:1px double; FONT-SIZE: 12pt; FONT-STYLE: normal; FONT-VARIANT: normal; FONT-WEIGHT: normal; HEIGHT: 22px; LINE-HEIGHT: normal}
+	.formfield {
+		border-color : #666699 #666699 #666699 #666699;
+		border-width : 1 1 1 1;
+		color : Black; background-color : #99CCFF;
+		height : 19px; font-size : 12px;
+	}
+	.button{ BORDER-RIGHT: #104a7b 1px solid black; BORDER-TOP: #afc4d5 1px solid black; BORDER-LEFT: #afc4d5 1px solid black; BORDER-BOTTOM: #104a7b 1px solid; CURSOR: hand; COLOR: #000066; HEIGHT: 19px; FONT-SIZE: 9pt;  TEXT-DECORATION: none}
+
+
+	BODY {text-decoration : none; color : Black;  font-size : 8pt;}
+	A:link    { color: #0000FF; TEXT-DECORATION: none;}
+	A:visited { COLOR: #0000FF; TEXT-DECORATION: none}
+	A:active  { COLOR: #3333ff; TEXT-DECORATION: none}
+	A:hover   { COLOR: #ff0000; TEXT-DECORATION: none}
+
+	.menu { font-size : 8pt; color : #004080; }
+	.menu:link { font-size : 8pt;color : #004080;  }
+	.menu:hover { font-size : 8pt;color : #004080;  }
+	.menu:visited { font-size : 8pt;color : #004080;  }
+	.navigation { font-size : 8pt;color : #004080; }
+
+	.navigation:link { text-decoration: none; font-size : 8pt;color : #004080;  }
+	.navigation:hover { text-decoration: none; font-size : 8pt;color : #004080;  }
+	.navigation:visited { text-decoration: none; font-size : 8pt;color : #004080; }
+
+	.autolink:link { text-decoration: underline; font-size : 9pt; color : #004080; }
+	.autolink:hover { text-decoration: underline; font-size : 9pt; color : #004080; }
+	.autolink:visited { text-decoration: underline; font-size : 9pt; color : #004080; }
+
+	TD.rempli { background-color : #D3E5FA;}
+	TD.memo { background-color: #D3E5FA;}
+	TD.cent { background-color: #D3E5FA; text-align: center; font-size : 8pt; color: Black;}
+	TD.right { background-color: #D3E5FA; text-align: right; font-size : 8pt; color: Black;}
+	TD.headers { background-color : #D3E5FA; text-align : center; font-size : 8pt; color:  #004080;  }
+	TD.default { background-color : #D3E5FA; font-size : 8pt;color : Black; }
+	TD.default9 { background-color : #D3E5FA; font-size : 9pt;color : Black; }
+	TD.title { color: #191970; background-color : #D3E5FA; text-align : center; font-size : 8pt;}
+	TD.headerright { color: #004080; background-color : #D3E5FA; text-align : right;  font-size : 8pt; }
+
+	SELECT { COLOR: #000066; BACKGROUND: #F8F8F8; border:1 solid black; BORDER-BOTTOM:1px double; FONT-SIZE: 9pt; FONT-STYLE: normal; FONT-VARIANT: normal; FONT-WEIGHT: normal; HEIGHT: 18px; LINE-HEIGHT: normal}
+-->

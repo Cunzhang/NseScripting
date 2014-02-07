@@ -1,0 +1,151 @@
+*{margin:0px;padding:0px;}
+html { overflow-y: scroll; }
+A:link{color: #000000; TEXT-DECORATION: none;}
+A:visited {COLOR: #000000; TEXT-DECORATION: none}
+A:active {COLOR: #3333ff; TEXT-DECORATION: none}
+A:hover {COLOR: #ff0000; TEXT-DECORATION: none}
+
+.panel{ background: #D6E4EF; color:#000000;}
+#expand_link{
+   left:140px;
+   top:10px;
+   position:absolute;
+   font-size:9pt;
+   text-decoration: underline;
+}
+
+ul {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+}
+
+img{
+   border:0px;
+   width:16px;
+   height:16px;
+}
+
+#body{
+   width:100%;
+   border-left:1px #154B76 solid;
+   border-right:1px #154B76 solid;
+   background: #70A4CF;
+   padding: 5px 5px 10px 5px;
+}
+
+#menu{
+   border:1px #246191 solid;
+   border-bottom:none;
+   background: #FFFFFF;
+}
+
+.U1 {
+   background: #FFFFFF;
+   border-bottom:1px #246191 solid;
+}
+
+.L1 a:link, .L1 a:visited{
+   color: #476074;
+   background:  url("menu1_bg.png");
+   font-size:9pt;
+   display: block;
+   text-decoration: none;
+   height: 24px;
+}
+
+.L1 a:link span, .L1 a:visited span{
+  background: url("ar1.png") no-repeat left;
+  padding-left: 15px;
+  height:24px;
+  vertical-align:middle;
+  padding:7px 0px 0px 16px;
+  cursor:hand;
+  width:100%;
+   
+}
+.L1 a:hover{
+   color: #000000;
+   font-weight:bold;
+   background: url("menu1_bg.png");
+   background-position: 0 -24px;
+}
+/*  一级菜单 active 效果  */
+.L1 a:link.active, .L1 a:hover.active, .L1 a:active.active, .L1 a:visited.active{
+   background: url("menu1_bg.png");
+   background-position: 0 -24px;
+}
+.L1 a:link.active span, .L1 a:hover.active span, .L1 a:active.active span, .L1 a:visited.active span{
+   color: #000000;
+   font-weight:bold;
+   background: url("ad1.png") no-repeat left;
+}
+
+.L21 a:link, .L21 a:visited, .L22 a:link, .L22 a:visited, .L3 a:link, .L3 a:visited{
+   color: #444659;
+   background:  none;
+   height: 24px;
+   font-size:9pt;
+   display: block;
+   text-decoration: none;
+   padding-left: 13px;
+   background: none;
+}
+
+.L21 a:link span, .L21 a:visited span, .L22 a:link span, .L22 a:visited span, .L3 a:link span, .L3 a:visited span{
+  vertical-align:middle;
+  padding:7px 0px 0px 16px;
+  background: url("ar.png") no-repeat left center;
+  cursor:hand;
+  width:100%;
+}
+
+.L22 a:link span, .L22 a:visited span, .L3 a:link span, .L3 a:visited span{
+  background:none;
+}
+
+.L21 a:hover, .L22 a:hover, .L3 a:hover{
+   background: url("menu2_bg.png") no-repeat top left;
+   font-weight:bold;
+}
+.L3 a:link span, .L3 a:visited span{
+   padding:7px 0px 0px 26px;
+}
+
+/*  二级菜单 active 效果  */
+.L21 a:link.active, .L21 a:hover.active, .L21 a:active.active, .L21 a:visited.active{
+   background: none;
+}
+.L21 a:link.active span, .L21 a:hover.active span, .L21 a:active.active span, .L21 a:visited.active span{
+   color: #000000;
+   font-weight:bold;
+   background: url("ad.png") no-repeat left center;
+}
+
+/*  二、三级菜单 active 效果  */
+.L22 a:link.active, .L22 a:hover.active, .L22 a:active.active, .L22 a:visited.active,
+.L3 a:link.active, .L3 a:hover.active, .L3 a:active.active, .L3 a:visited.active{
+   background: url("menu2_bg.png") no-repeat left;
+   background-position: 0 -24px;
+}
+.L22 a:link.active span, .L22 a:hover.active span, .L22 a:active.active span, .L22 a:visited.active span,
+.L3 a:link.active span, .L3 a:hover.active span, .L3 a:active.active span, .L3 a:visited.active span{
+   color: #FFFFFF;
+   font-weight:bold;
+   background: none;
+}
+
+.Ls a:link, .Ls a:visited, .Ls a:hover, .Ls a:active{
+   text-align:right;
+   padding-top:4px;
+   padding-right:4px;
+   height:20px;
+   font-size:9pt;
+   text-decoration: underline;
+   background:none;
+}
+
+#bottom{
+   height:80px;
+   background: url("menu_bottom_bg.png") no-repeat;
+}

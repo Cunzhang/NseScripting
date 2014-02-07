@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>{title}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" type="text/css" href="/templates/clear/index.css">
+<link rel="shortcut icon" href="/images/tongda.ico">
+{javascript}
+</head>
+
+<body onload="javascript:form1.{focus_filed}.focus();">
+<img src="/templates/clear/product.png">
+<br>
+<br>
+<br>
+<br>
+
+<form name="form1" method="post" action="logincheck.php" onsubmit="{form_submit}">
+  <table align="center" border="0" cellspacing="0" cellpadding="0" id="logo">
+    <tr height="80">
+      <td width="438"></td>
+      <td width="260"></td>
+    </tr>
+    <tr height="40">
+      <td align="right">用户名：</td>
+      <td>&nbsp;&nbsp;<input type="text" class="text" name="USERNAME" size="30" maxlength="30" onmouseover="this.focus()" onfocus="this.select()" value="{username_cookie}"></td>
+    </tr>
+    <tr height="40">
+      <td align="right">密　码：</td>
+      <td>&nbsp;&nbsp;<input type="password" class="text" name="PASSWORD" onmouseover="this.focus()" onfocus="this.select()" size="30" maxlength="30" value=""></td>
+    </tr>
+    <tr height="30">
+      <td></td>
+      <td>&nbsp;&nbsp;{ui}</td>
+    </tr>
+    <tr height="30">
+      <td></td>
+      <td>&nbsp;&nbsp;<input type="image" align="absmiddle" border="0" src="/templates/clear/login_btn.png" alt="登 录"></td>
+    </tr>
+    <tr height="72">
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+  {usbkey_object}
+</form>
+
+</body>
+</html>

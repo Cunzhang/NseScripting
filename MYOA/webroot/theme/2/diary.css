@@ -1,0 +1,198 @@
+*{padding:0px;margin:0px;}
+BODY {FONT-SIZE: 12px; margin: 0px 0px 0px 0px;}
+A {
+  TEXT-DECORATION: underline
+}
+A:hover {
+  TEXT-DECORATION: underline; color: Red;
+}
+/*  diary_left.php begin     */
+.outer {
+   margin-left: 5px;
+   width: 100%;
+	 margin-right: 0px;
+	 height: 100%;
+}
+#left_top{border-left:1px #9AB1C3 solid;border-right:1px #9AB1C3 solid;width:100%;height:36px;font-weight:bold;text-align:center;overflow:hidden;margin-bottom:5px;}
+#left_top a{font-size:10pt;color:#36434E;display:block;height:36px;background:url('big_btn_bg.png');padding-top:10px;letter-spacing:3px;}
+#left_top a:hover{background-position:0px -38px;}
+.new_dia{width:48px;float:left;}
+.query_dia{width:48px;float:left;border-left:1px #DCDCDC solid;}
+.latest_dia{width:47px;float:left;border-left:1px #DCDCDC solid;}
+
+#calendar_table{
+   width: 100%;
+   text-align: center;
+   padding-left: 0px;
+   padding-right: 0px;
+   background-color: #ffffff;
+   border-left: 1px #83ACCF solid;
+	 border-right: 1px #83ACCF solid;
+	 border-bottom: 1px #83ACCF solid;
+}
+.calendar_header{
+   background-color: #dfeaff;
+   padding: 3px;
+}
+#calendar_table .row TD {
+   FONT-SIZE: 9px;
+   FONT-FAMILY: Verdana;
+   HEIGHT: 18px;
+}
+.calendar_header{background-color: #dfeaff;}
+#calendar_table .header1 {
+   FONT-WEIGHT: bolder;
+   COLOR: #6bad42;
+   BORDER-BOTTOM: #dedede 0px solid;
+   HEIGHT: 16px;
+   BACKGROUND-COLOR: #efefef;
+   text-align: center;
+   WIDTH: 100%;font-size: 12px;
+}
+.module{
+   overflow: hidden;
+   width: 100%;
+   border-width: 0px;
+}
+#new_reply{
+   margin-top: 0px;
+   background-color: #ffffff;
+	 border-left: 1px #83ACCF solid;
+	 border-right: 1px #83ACCF solid;
+	 border-bottom: 1px #83ACCF solid;
+	 height:150px;
+}
+#new_reply ul{
+   margin: 0;
+   margin-left: 3px;
+   margin-right: 1px;
+   padding-top: 2px;
+   padding-bottom: 2px;
+   line-height:20px;
+}
+#new_reply li{
+   margin: 0 0 0 15px;
+   padding: 0px 0 0px 0;
+   list-style-type: disc;
+}
+#module_calendar a{
+   text-decoration: none;
+   display:block;
+   width: 10px;
+   height: 8px;
+   font-size: 12px;
+}
+#module_calendar a:hover{
+   text-decoration: none;
+   background-color: #6bad42;
+   color: #ffffff;
+   width: 10px;
+   height: 8px;
+}
+#year_month{
+   font-size: 12px;
+}
+.header{
+   background-color: #dfeaff;
+   padding: 3px;
+   font-size: 12px;
+   font-weight: bold;
+   text-align: left;
+   border-bottom: 1px dotted #C8C8C8;}
+
+/*  diary_left.php end     */
+
+/*  diary_body.php begin     */
+#body_top{
+	margin-top: 8px;
+}
+.body_content{
+   margin-top: 0px;
+   text-align: center;
+}
+.one_diary{
+	margin-top: 0px;
+	padding: 2px;
+	width: 98%;
+	text-align: left;
+}
+.subject{
+  height: 21px;
+	text-align: left;
+	font-size: 12px;
+  padding-top: 3px;
+  padding-left: 4px;
+  margin-top: 5px;
+  text-decoration: none;
+	border: 1px #83ACCF solid;
+  background:url("block_hd_bg.png");
+}
+.subject A {
+	FONT-WEIGHT: bolder;
+	FONT-SIZE: 14px;
+	PADDING-TOP: 8px;
+	TEXT-DECORATION: none;
+}
+
+.diary_type {
+	padding-right: 20px;
+	padding-left: 20px;
+	padding-bottom: 10px;
+	color: #999;
+	padding-top: 10px;
+	font-size: 12px;
+	background-color: #ffffff;
+	border-left: 1px #83ACCF solid;
+	border-right: 1px #83ACCF solid;
+}
+.operate {
+	padding-top: 9px;
+	text-align: right;
+	height:21px;
+	color: #6b6b6b;
+	font-size: 12px;
+	background-color: #FFFFFF;
+	border-bottom: #83ACCF 1px solid;
+	border-left: 1px #83ACCF solid;
+	border-right: 1px #83ACCF solid;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+.operate a {
+	TEXT-DECORATION: none;
+}
+.content {
+	PADDING-RIGHT: 20px;
+	PADDING-LEFT: 20px;
+	PADDING-BOTTOM: 8px;
+	COLOR: #252927;
+	line-height: normal;
+	PADDING-TOP: 8px;
+	FONT-SIZE: 12px;
+	background-color: #ffffff;
+	border-left: 1px #83ACCF solid;
+	border-right: 1px #83ACCF solid;
+}
+
+.leftsubjectdairy{
+  margin-top: 0px;
+  font-weight: bold;
+}
+
+.leftsubjectnew{
+  margin-top: 12px;
+  font-weight: bold;
+}
+
+#readbody{
+	width: 97%;
+	padding-left:10px;
+}
+.replycontent{
+  padding-left: 14px;
+}
+
+.operatebar{
+	width: 98%;
+}
+/*  diary_body.php end     */

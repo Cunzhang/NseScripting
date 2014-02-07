@@ -1,0 +1,65 @@
+*{padding: 0; margin: 0; }
+html { overflow-y: scroll; }
+body {background: #D6E4EF;color:#36434E; margin: 0px; padding: 0px;}
+/* other */
+img {border: none; vertical-align: middle;}
+
+a:link{color: #476074; text-decoration: none;}
+a:visited {color: #476074; text-decoration: none;}
+a:hover {color: #333333; text-decoration: underline;}
+a:active {color: #333333; text-decoration: underline;}
+
+ul {
+	margin: 0;
+	margin-left: 3px;
+	padding: 0;
+	line-height:20px;
+}
+li {
+	margin: 0 0 0 0px;
+	padding: 0px 0 0px 16px;
+	list-style-type: none;
+	line-height:20px;
+	background:url("black_dot.png") no-repeat left;
+}
+
+li a:link{color: #0066cc; text-decoration: none;}
+li a:visited {color: #333333; text-decoration: none;}
+li a:hover {color: #333333; text-decoration: underline;}
+li a:active {color: #333333; text-decoration: underline;}
+
+img{
+	border:0px;
+	vertical-align:middle
+}
+
+#overlay {display: none; z-index: 10000; height:100%;BACKGROUND: #000; filter: alpha(opacity=50); LEFT: 0px; POSITION: absolute; TOP: 0px; opacity: 0;}
+
+.dialogBlock {margin: 10px auto; clear: both; position: absolute; top: 100px;  z-index: 10002;}
+.dialogBlock .menu {float: left; width: 120px;}
+.dialogBlock .menu a {display: block; padding: 3px 10px; margin-bottom: 5px; color: #645A44; text-decoration: none; text-align: center; background: transparent; border: 1px solid white;}
+.dialogBlock .menu a:hover {color: #395500; text-decoration: none !important; background: #F4FADF url('bg_input_btn_hover.png'); border-color: #99CC00; border-bottom-color: #80AA00; border-right-color: #80AA00;}
+.dialogBlock .menu .current {border-color: #C8C4BB; border-bottom-color: #ABA498; border-right-color: #ABA498; background: #F4FBE1 url('bg_input_btn.png');}
+.dialogBlock .subContent {float: right; width: 500px; color: #663300; border: 1px #b8d1e2 solid; background: white url('bg_input_text.png') top left repeat-x;}
+
+.module {border: 1px #83ACCF solid; background: white; padding: 0px;margin-top:10px;margin-left:10px;}
+.moduleHeader {border-bottom: 1px #83ACCF solid; font-size: 12px; overflow: hidden; font-weight: normal; background: url('block_hd_bg.png') top left repeat-x;height:24px;}
+.moduleHeader .icon {float: left; padding: 3px 3px 0px;}
+.moduleHeader .title {padding: 2px 3px;  float: left; font-weight: bold;width:65%;line-height:20px;}
+.moduleHeader .option {padding: 2px 3px; float: right; cursor: pointer; text-decoration: none;}
+.moduleHeader .close {padding: 2px 3px; float: right; cursor: pointer; text-decoration: none;display:none;}
+.module_body {font-size: 9pt;margin: 0 !important; overflow: hidden !important; padding: 10px 5px;}
+.moduleFooter {padding: 0; text-align: center; font-size: 12px; margin-bottom: 10px;}
+.module_page{display:none;}
+.module_div{
+	overflow:hidden;}
+.PageLinkDisable{
+   color:#CCCCCC !important;
+}
+
+.listColor {border: none;}
+.listColor hr {border-bottom: 1px #D6E4EF solid;}
+.listColor .head {background:#D6E4EF url("module_head_bg_left.png") no-repeat left top; padding-left:5px;height:24px;}
+.listColor .moduleHeader {border: none;background:#D6E4EF url("module_head_bg_right.png") no-repeat top right;height:24px;}
+.listColor .module_body {background: #FFFFFF;border: 1px #83ACCF solid;}
+.listColor .bright {color: #003366 !important;}

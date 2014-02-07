@@ -1,0 +1,34 @@
+*{margin:0px;padding:0px;}
+img{border:0px;}
+#navPanel{
+	width: 100%;
+	height: 30px;
+	padding-top:3px;
+	font-size:10pt;
+	background: #FFFFFF url('bg_btn.png') top left repeat-x;
+}
+#navMenu{
+	float: left;
+	white-space: nowrap;
+	padding: 0px 20px;
+}
+#navMenu a:link,
+#navMenu a:active,
+#navMenu a:visited
+{
+	float: left;
+	display: block;
+	overflow:hidden;
+	color:#003366;
+	padding: 5px 10px 4px 10px;
+	text-decoration: none;
+	background: url('tab_inactive.gif') center right no-repeat;
+}
+#navMenu a:link.active, #navMenu a:visited.active, #navMenu a:hover
+{
+	padding: 5px 9px 4px 9px;
+	border:1px #b8d1e2 solid;
+	border-bottom:1px #E7F1F8 solid;
+	background: #E7F1F8;
+	font-weight:bold;
+}

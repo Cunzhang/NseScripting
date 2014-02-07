@@ -1,0 +1,314 @@
+html { overflow-y: scroll; }
+
+a:link{color: #0066cc; text-decoration: none;}
+a:visited {color: #0066cc; text-decoration: none}
+a:hover {color: #333333; text-decoration: underline}
+a:active {color: #333333; text-decoration: underline}
+
+A.A1:link { COLOR: #003366; TEXT-DECORATION: underline;}
+A.A1:visited { COLOR: #003366; TEXT-DECORATION: underline}
+A.A1:active  { COLOR: #124164; TEXT-DECORATION: underline}
+A.A1:hover   { COLOR: #124164; TEXT-DECORATION: underline}
+
+body { font-size: 12pt;}
+img{border:0px;}
+table{border-collapse:collapse;}
+.bodycolor { BACKGROUND: #D6E4EF}
+.loginbodycolor { BACKGROUND: #6BA2D8}
+.topbar {font-size: 9pt;BACKGROUND: #C4D9EF;background-image: url("topbar.gif")}
+.topbar2 {font-size: 9pt;BACKGROUND: #C4D9EF; background-image: url("menubg.gif")}
+
+.panel{ BACKGROUND: #C4D9EF; COLOR:#654125;}
+.timebar{ BACKGROUND: #CEDFF1;}
+.menu_tr1{ font-size: 9pt;COLOR:#000000;background-image:url("topbar.gif");cursor:pointer}
+.menu_tr2{ font-size: 9pt;COLOR:#000000;BACKGROUND: #CEDFF1;cursor:pointer}
+
+.small  { font-size: 9pt;}
+.small1  { font-size: 9pt;COLOR: #000000;}
+.big { font-size: 12pt;}
+.big1   { font-size: 12pt;COLOR: #000000;}
+.big2   { font-size: 18pt}
+.big3   { font-size: 12pt;COLOR: #124164;FONT-WEIGHT: bold;}
+.big4   { COLOR: #FF0000;}
+.verybig{ font-size: 24pt}
+<!--
+input.SmallButton, input.ArrowButton {FONT-SIZE: 9pt;height: 20px; text-decoration: none; vertical-align: middle; border: 1px solid #6E91C7; background: #F4FBE1 url('button_bg.gif');}
+input.SmallButton:hover, input.ArrowButton:hover {FONT-SIZE: 9pt;color: #395500; background: #F4FADF url('bg_input_btn_hover.png'); border: 1px solid #80AA00; border-top: 1px solid #99CC00; border-left: 1px solid #99CC00;}
+
+input.BigButton {FONT-SIZE: 12pt; margin: 1px; height: 24px; text-decoration: none; vertical-align: middle; border: 1px solid #6E91C7; background: #F4FBE1 url('button_bg.gif');}
+input.BigButton:hover {FONT-SIZE: 12pt;color: #395500; background: #F4FADF url('bg_input_btn_hover.png'); border: 1px solid #80AA00; border-top: 1px solid #99CC00; border-left: 1px solid #99CC00;}
+-->
+
+input.SmallButtonAHover{width:50px;height:21px;color:#000000;background:url("btn_a.png") no-repeat;border:0px;cursor:pointer;background-position:0 -21px;}
+input.SmallButtonA{width:50px;height:21px;color:#36434E;background:url("btn_a.png") no-repeat;border:0px;cursor:pointer;}
+input.SmallButtonA:hover{background-position:0 -21px;}
+
+input.SmallButtonBHover{width:74px;height:21px;color:#000000;background:url("btn_b.png") no-repeat;border:0px;cursor:pointer;background-position:0 -21px;}
+input.SmallButtonB{width:74px;height:21px;color:#36434E;background:url("btn_b.png") no-repeat;border:0px;cursor:pointer;}
+input.SmallButtonB:hover{background-position:0 -21px;}
+
+input.SmallButtonCHover{width:105px;height:21px;color:#000000;background:url("btn_c.png") no-repeat;border:0px;cursor:pointer;background-position:0 -21px;}
+input.SmallButtonC{width:105px;height:21px;color:#36434E;background:url("btn_c.png") no-repeat;border:0px;cursor:pointer;}
+input.SmallButtonC:hover{background-position:0 -21px;}
+
+input.SmallButtonDHover{width:160px;height:21px;color:#000000;background:url("btn_d.png") no-repeat;border:0px;cursor:pointer;background-position:0 -21px;}
+input.SmallButtonD{width:160px;height:21px;color:#36434E;background:url("btn_d.png") no-repeat;border:0px;cursor:pointer;}
+input.SmallButtonD:hover{background-position:0 -21px;}
+
+input.SmallButtonEHover{width:245px;height:21px;color:#000000;background:url("btn_e.png") no-repeat;border:0px;cursor:pointer;background-position:0 -21px;}
+input.SmallButtonE{width:245px;height:21px;color:#36434E;background:url("btn_e.png") no-repeat;border:0px;cursor:pointer;}
+input.SmallButtonE:hover{background-position:0 -21px;}
+
+input.BigButtonAHover{width:60px;height:24px;color:#000000;background:url("big_btn_a.png") no-repeat;border:0px;cursor:pointer;font-size:12pt;background-position:0 -24px;}
+input.BigButtonA{width:60px;height:24px;color:#36434E;background:url("big_btn_a.png") no-repeat;border:0px;cursor:pointer;font-size:12pt;}
+input.BigButtonA:hover{background-position:0 -24px;}
+
+input.BigButtonBHover{width:84px;height:24px;color:#000000;background:url("big_btn_b.png") no-repeat;border:0px;cursor:pointer;font-size:12pt;background-position:0 -24px;}
+input.BigButtonB{width:84px;height:24px;color:#36434E;background:url("big_btn_b.png") no-repeat;border:0px;cursor:pointer;font-size:12pt;}
+input.BigButtonB:hover{background-position:0 -24px;}
+
+input.BigButtonCHover{width:125px;height:24px;color:#000000;background:url("big_btn_c.png") no-repeat;border:0px;cursor:pointer;font-size:12pt;background-position:0 -24px;}
+input.BigButtonC{width:125px;height:24px;color:#36434E;background:url("big_btn_c.png") no-repeat;border:0px;cursor:pointer;font-size:12pt;}
+input.BigButtonC:hover{background-position:0 -24px;}
+
+input.BigButtonDHover{width:195px;height:24px;color:#000000;background:url("big_btn_d.png") no-repeat;border:0px;cursor:pointer;font-size:12pt;background-position:0 -24px;}
+input.BigButtonD{width:195px;height:24px;color:#36434E;background:url("big_btn_d.png") no-repeat;border:0px;cursor:pointer;font-size:12pt;}
+input.BigButtonD:hover{background-position:0 -24px;}
+
+input.BigButtonEHover{width:305px;height:24px;color:#000000;background:url("big_btn_e.png") no-repeat;border:0px;cursor:pointer;font-size:12pt;background-position:0 -24px;}
+input.BigButtonE{width:305px;height:24px;color:#36434E;background:url("big_btn_e.png") no-repeat;border:0px;cursor:pointer;font-size:12pt;}
+input.BigButtonE:hover{background-position:0 -24px;}
+
+input.BigInput,textarea.BigInput {font-size: 10pt;padding: 1px 5px; vertical-align: middle; border: 1px solid #C0BBB4; background: white url('bg_input_text.png') top left repeat-x; background-position:0 -1px;}
+input.BigInput:hover,textarea.BigInput:hover {font-size: 10pt;border: 1px solid #99CC00; background: white url('bg_input_text_hover.png') top left repeat-x;}
+
+input.SmallInput,textarea.SmallInput {font-size: 9pt;padding: 1px 5px; vertical-align: middle; border: 1px solid #C0BBB4; background: white url('bg_input_text.png') top left repeat-x; background-position:0 -1px;}
+input.SmallInput:hover,textarea.SmallInput:hover {font-size: 9pt;border: 1px solid #99CC00; background: white url('bg_input_text_hover.png') top left repeat-x;}
+
+input.BigInputMoney{COLOR:#006; BACKGROUND: #F8F8F8; text-align: RIGHT; border:solid 1px black; BORDER-BOTTOM:1px double; FONT-SIZE: 12pt; FONT-STYLE: normal; FONT-VARIANT: normal; FONT-WEIGHT: normal; HEIGHT: 22px; LINE-HEIGHT: normal}
+
+input.BigStatic,textarea.BigStatic {font-size: 10pt;padding: 1px 5px; vertical-align: middle; border: 1px solid #C0BBB4; background: #E0E0E0;}
+
+input.SmallStatic,textarea.SmallStatic {font-size: 9pt;padding: 1px 5px; vertical-align: middle; border: 1px solid #C0BBB4; background: #E0E0E0;}
+
+select.BigSelect  { COLOR: #000066;  border: 1px solid #C0BBB4; background: white url('bg_input_text.png') top left repeat-x; BORDER-BOTTOM:1px double; FONT-SIZE: 12pt; FONT-STYLE: normal; FONT-VARIANT: normal; FONT-WEIGHT: normal; HEIGHT: 22px; LINE-HEIGHT: normal}
+select.BigSelect:hover  { COLOR: #000066;  border: 1px solid #C0BBB4; background: white url('bg_input_text_hover.png') top left repeat-x; BORDER-BOTTOM:1px double; FONT-SIZE: 12pt; FONT-STYLE: normal; FONT-VARIANT: normal; FONT-WEIGHT: normal; HEIGHT: 22px; LINE-HEIGHT: normal}
+
+select.SmallSelect{ COLOR: #000066;  border: 1px solid #C0BBB4; background: white url('bg_input_text.png') top left repeat-x; BORDER-BOTTOM:1px double; FONT-SIZE: 9pt; FONT-STYLE: normal; FONT-VARIANT: normal; FONT-WEIGHT: normal; HEIGHT: 18px; LINE-HEIGHT: normal}
+select.SmallSelect:hover{ COLOR: #000066;  border: 1px solid #C0BBB4; background: white url('bg_input_text_hover.png') top left repeat-x; BORDER-BOTTOM:1px double; FONT-SIZE: 9pt; FONT-STYLE: normal; FONT-VARIANT: normal; FONT-WEIGHT: normal; HEIGHT: 18px; LINE-HEIGHT: normal}
+
+select.BigStatic  { COLOR: #000066; BACKGROUND: #E0E0E0; border:solid 1px black; BORDER-BOTTOM:1px double; FONT-SIZE: 12pt; FONT-STYLE: normal; FONT-VARIANT: normal; FONT-WEIGHT: normal; HEIGHT: 22px; LINE-HEIGHT: normal}
+select.SmallStatic{ COLOR: #000066; BACKGROUND: #E0E0E0; border:solid 1px black; FONT-SIZE: 9pt; FONT-STYLE: normal; FONT-VARIANT: normal; FONT-WEIGHT: normal; HEIGHT: 18px; LINE-HEIGHT: normal}
+
+.TableControl{ background: #DEF1F1}
+.TableHeader { COLOR:#2E2E5A; FONT-WEIGHT: bold; FONT-SIZE: 9pt; background:url("list_hd_bg.png"); line-height:21px;}
+.TableHeader1 { BACKGROUND: #D3E5FA; background-image: url("button_back.gif");  cursor:pointer; COLOR: #000066;}
+.TableHeader2 { BACKGROUND: #D3E5FA; background-image: url("menubg.gif");  cursor:pointer; COLOR: #000066;FONT-WEIGHT: bold;}
+.TableContent{ BACKGROUND: #F0F0F0;}
+.TableData   { BACKGROUND: #FFFFFF;COLOR:#000000;}
+.TableLine1  { BACKGROUND: #F3F3F3;}
+.TableLine2  { BACKGROUND: #FFFFFF;}
+.TextColor1  { COLOR: #FF6600;}
+.TextColor2  { COLOR: #FF0000;}
+.top{ COLOR: #FF0000;font-weight:bold;}
+
+.percent { height: 12px; border: 1px solid #666666; float: left; padding: 0px;margin-top:3px;}
+.percent div {height: 8px;font-size: 0px;margin: 1px;}
+.percenttxt {float:left;font-size: 9pt;margin-top:1px;}
+.s_on{background:url(/images/topmenubg2.gif);font-size: 9pt;}
+.s_of{background:url(/images/topmenubg1.gif);font-size: 9pt;}
+.m_on{background:url(/images/topmenubg2.gif);font-size: 9pt;}
+.border14-1 {border: solid 1px #2E2E5A;font-size: 14px;}/* 表格外框 */
+.border14-2 {border-bottom-width: 1px;border-bottom-style: solid;border-bottom-color: #2E2E5A;border-right-width: 1px;border-right-style: solid;border-right-color: #2E2E5A;font-size: 14px;}/* 表格边框右面 */
+.border14-3 {border-bottom-width: 1px;border-bottom-style: solid;border-bottom-color: #98BBD6;font-size: 14px;border-top-style: none;border-right-style: none;border-left-style: none;}/* 表格边框底面 */
+.border14-4 {border-right-width: 1px;border-right-style: solid;border-right-color: #98BBD6;font-size: 14px;}/* 表格边框左面 */
+.title_text {  font-size: 14px; font-weight: bold; color: #0A5FA2; }
+.table_border {  border-color: #98BBD6 #98BBD6 black; border-style: solid; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 0px; border-left-width: 1px}
+.table_bg {  background-attachment: fixed; background-image: url("bg_header.png"); background-repeat: repeat; background-position: left; border-color: #2E2E5A black; border-style: solid; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 0px; border-left-width: 1px}
+.table_left {  background-attachment: fixed; background-image: url(table_left.gif); background-repeat: no-repeat; background-position: left}
+
+.attach_name:link,.attach_name:hover,.attach_name:active,.attach_name:visited{color:#0D3A73;}
+.attach_div{display:none;width:auto;border-top:0;border-left: #83ACCF 1px solid;border-right: #83ACCF 1px solid;border-bottom:#83ACCF 1px solid;position:absolute;padding:0px;z-index:10001;background:#FFFFFF;}
+.attach_div a{display:block !important;line-height:20px;padding:3px 0 0 10px;border-top: #83ACCF 1px dotted;width:100%;margin:3px;margin-top:0;}
+.attach_div a:hover{background:#D6E4EF;border: solid 1px #606275;padding:3px 0 0 10px;width:auto}
+
+/*  列表型表格样式  */
+.TableList{
+   border:1px #83ACCF solid;
+   line-height:21px;
+   font-size:9pt;
+   border-collapse:collapse;
+   padding:3px;
+}
+.TableList td{
+   padding:3px;
+   color:#476074;
+}
+.TableList .TableHeader td,
+.TableList td.TableHeader{
+   background:url("list_hd_bg.png");
+   border-bottom:1px #CCCCCC solid;
+   border-right:1px #CCCCCC solid;
+   font-weight:bold;
+   text-align:center;
+   color:#36434E;
+   padding:0px;
+}
+.TableList .TableLine1 td,
+.TableList td.TableLine1{
+   background:#F8F8F8;
+   border-top:1px #E4ECF3 solid;
+}
+.TableList .TableLine2 td,
+.TableList td.TableLine2{
+   background:#FFFFFF;
+   border-top:1px #E4ECF3 solid;
+}
+.TableList .TableData td,
+.TableList td.TableData{
+   background:#FFFFFF;
+   border-top:1px #E4ECF3 solid;
+}
+.TableList .TableContent td,
+.TableList td.TableContent{
+   background:#F0F0F0;
+   border-top:1px #E4ECF3 solid;
+}
+.TableList .TableFooter td,
+.TableList .TableControl td,
+.TableList td.TableFooter,
+.TableList td.TableControl{
+   background: #DEF1F1;
+   border:1px #E4ECF3 solid;
+}
+.TableList .TextColor1 td,
+.TableList td.TextColor1
+{
+   COLOR: #FF6600;
+}
+.TableList .TextColor2 td,
+.TableList td.TextColor2
+{
+   COLOR: #FF0000;
+}
+
+/*  block型表格样式  */
+.TableBlock{
+   border:1px #83ACCF solid;
+   line-height:20px;
+   font-size:9pt;
+   border-collapse:collapse;
+}
+.TableBlock td{
+   padding:3px;
+   color:#000000;
+}
+.TableBlock .TableHeader td,
+.TableBlock td.TableHeader{
+   background:url("block_hd_bg.png");
+   border:1px #83ACCF solid;
+   font-weight:bold;
+   color:#476074;
+   line-height:23px;
+   padding:0px;
+}
+.TableBlock .TableLine1 td,
+.TableBlock td.TableLine1{
+   background:#F8F8F8;
+   border-top:1px #CFDDEA solid;
+   border-right:1px #CFDDEA solid;
+}
+.TableBlock .TableLine2 td,
+.TableBlock td.TableLine2{
+   background:#FFFFFF;
+   border-top:1px #CFDDEA solid;
+   border-right:1px #CFDDEA solid;
+}
+.TableBlock .TableData td,
+.TableBlock td.TableData{
+   background:#FFFFFF;
+   border-top:1px #CFDDEA solid;
+   border-right:1px #CFDDEA solid;
+}
+.TableBlock .TableContent td,
+.TableBlock td.TableContent{
+   background:#F0F0F0;
+   border-top:1px #CFDDEA solid;
+   border-right:1px #CFDDEA solid;
+}
+.TableBlock .TableFooter td,
+.TableBlock .TableControl td,
+.TableBlock td.TableFooter,
+.TableBlock td.TableControl{
+   background: #DEF1F1;
+   border:1px #CFDDEA solid;
+}
+
+.Content{
+   line-height:normal;
+}
+
+.TableControl a{
+   color:#0066CC;
+   text-decoration: none;
+}
+
+.TableBlock .TableRowHover td,
+.TableBlock td.TableRowHover
+{
+   background:#D6E4EF;
+}
+
+.TableBlock .TableRowActive td,
+.TableBlock td.TableRowActive
+{
+   background:#83ACCF;
+   color:#FFFFFF;
+}
+/* 提示框样式 */
+.MessageBox{
+   height:90px;
+   border:1px #83ACCF dotted;
+   background:#FFFFFF;
+   margin-top:15px;
+   margin-bottom:15px;
+}
+.MessageBox td.msg{
+   padding:5px 20px 10px 90px;
+   font-weight:bold;
+}
+.MessageBox td.msg h4.title{
+   color:#36434E;
+   font-size:18pt;
+   border-bottom:1px #83ACCF dotted;
+   margin-bottom:10px;
+}
+.MessageBox td.msg div.content{
+   color:#EBBF47;
+   border:none;
+}
+.MessageBox td.error{
+   background:url("/images/icon64_error.png") no-repeat top left;
+   background-position:10px 10px;
+}
+.MessageBox td.info{
+   background:url("/images/icon64_info.png") no-repeat top left;
+   background-position:10px 10px;
+}
+.MessageBox td.warning{
+   background:url("/images/icon64_warning.png") no-repeat top left;
+   background-position:10px 10px;
+}
+.MessageBox td.forbidden{
+   background:url("/images/icon64_forbidden.png") no-repeat top left;
+   background-position:10px 10px;
+}
+.MessageBox td.stop{
+   background:url("/images/icon64_stop.png") no-repeat top left;
+   background-position:10px 10px;
+}
+.MessageBox td.blank{
+   height:40px;
+   padding:10px 20px 10px 20px;
+   text-align:center;
+}

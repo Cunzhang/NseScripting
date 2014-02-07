@@ -1,0 +1,272 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+	<head>
+		<title>Link Properties</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+		<meta name="robots" content="noindex, nofollow" />
+		<script src="common/dialog_common.js" type="text/javascript"></script>
+		<script src="link/link.js" type="text/javascript"></script>
+	</head>
+	<body scroll="no" style="OVERFLOW: hidden">
+		<div id="divInfo" style="DISPLAY: none">
+			<span Lang="DlgLnkType">Link Type</span><br />
+			<select id="cmbLinkType" onchange="SetLinkType(this.value);">
+				<option value="url" Lang="DlgLnkTypeURL" selected="selected">URL</option>
+				<option value="anchor" Lang="DlgLnkTypeAnchor">Anchor in this page</option>
+				<option value="email" Lang="DlgLnkTypeEMail">E-Mail</option>
+			</select>
+			<br />
+			<br />
+			<div id="divLinkTypeUrl">
+				<table cellspacing="0" cellpadding="0" width="100%" border="0" dir="ltr">
+					<tr>
+						<td nowrap="nowrap">
+							<span Lang="DlgLnkProto">Protocol</span><br />
+							<select id="cmbLinkProtocol">
+								<option value="http://" selected="selected">http://</option>
+								<option value="https://">https://</option>
+								<option value="ftp://">ftp://</option>
+								<option value="news://">news://</option>
+								<option value="" Lang="DlgLnkProtoOther">&lt;other&gt;</option>
+							</select>
+						</td>
+						<td nowrap="nowrap">&nbsp;</td>
+						<td nowrap="nowrap" width="100%">
+							<span Lang="DlgLnkURL">URL</span><br />
+							<input id="txtUrl" style="WIDTH: 100%" type="text" onkeyup="OnUrlChange();" onchange="OnUrlChange();" />
+						</td>
+					</tr>
+				</table>
+				<br />
+				<div id="divBrowseServer">
+				<input type="button" value="Browse Server" Lang="DlgBtnBrowseServer" onclick="BrowseServer();" />
+				</div>
+			</div>
+			<div id="divLinkTypeAnchor" style="DISPLAY: none" align="center">
+				<div id="divSelAnchor" style="DISPLAY: none">
+					<table cellspacing="0" cellpadding="0" border="0" width="70%">
+						<tr>
+							<td colspan="3">
+								<span Lang="DlgLnkAnchorSel">Select an Anchor</span>
+							</td>
+						</tr>
+						<tr>
+							<td width="50%">
+								<span Lang="DlgLnkAnchorByName">By Anchor Name</span><br />
+								<select id="cmbAnchorName" onchange="GetE('cmbAnchorId').value='';" style="WIDTH: 100%">
+									<option value="" selected="selected"></option>
+								</select>
+							</td>
+							<td>&nbsp;&nbsp;&nbsp;</td>
+							<td width="50%">
+								<span Lang="DlgLnkAnchorById">By Element Id</span><br />
+								<select id="cmbAnchorId" onchange="GetE('cmbAnchorName').value='';" style="WIDTH: 100%">
+									<option value="" selected="selected"></option>
+								</select>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div id="divNoAnchor" style="DISPLAY: none">
+					<span Lang="DlgLnkNoAnchors">&lt;No anchors available in the document&gt;</span>
+				</div>
+			</div>
+			<div id="divLinkTypeEMail" style="DISPLAY: none">
+				<span Lang="DlgLnkEMail">E-Mail Address</span><br />
+				<input id="txtEMailAddress" style="WIDTH: 100%" type="text" /><br />
+				<span Lang="DlgLnkEMailSubject">Message Subject</span><br />
+				<input id="txtEMailSubject" style="WIDTH: 100%" type="text" /><br />
+				<span Lang="DlgLnkEMailBody">Message Body</span><br />
+				<textarea id="txtEMailBody" style="WIDTH: 100%" rows="3" cols="20"></textarea>
+			</div>
+		</div>
+		<div id="divUpload" style="DISPLAY: none">
+			<form id="frmUpload" method="post" target="UploadWindow" enctype="multipart/form-data" action="" onsubmit="return CheckUpload();">
+				<span Lang="DlgLnkUpload">Upload</span><br />
+				<input id="txtUploadFile" style="WIDTH: 100%" type="file" size="40" name="NewFile" /><br />
+				<br />
+				<input id="btnUpload" type="submit" value="Send it to the Server" Lang="DlgLnkBtnUpload" />
+				<iframe name="UploadWindow" style="DISPLAY: none" src="javascript:void(0)"></iframe>
+			</form>
+		</div>
+		<div id="divTarget" style="DISPLAY: none">
+			<table cellspacing="0" cellpadding="0" width="100%" border="0">
+				<tr>
+					<td nowrap="nowrap">
+						<span Lang="DlgLnkTarget">Target</span><br />
+						<select id="cmbTarget" onchange="SetTarget(this.value);">
+							<option value="" Lang="DlgGenNotSet" selected="selected">&lt;not set&gt;</option>
+							<option value="frame" Lang="DlgLnkTargetFrame">&lt;frame&gt;</option>
+							<option value="popup" Lang="DlgLnkTargetPopup">&lt;popup window&gt;</option>
+							<option value="_blank" Lang="DlgLnkTargetBlank">New Window (_blank)</option>
+							<option value="_top" Lang="DlgLnkTargetTop">Topmost Window (_top)</option>
+							<option value="_self" Lang="DlgLnkTargetSelf">Same Window (_self)</option>
+							<option value="_parent" Lang="DlgLnkTargetParent">Parent Window (_parent)</option>
+						</select>
+					</td>
+					<td>&nbsp;</td>
+					<td id="tdTargetFrame" nowrap="nowrap" width="100%">
+						<span Lang="DlgLnkTargetFrameName">Target Frame Name</span><br />
+						<input id="txtTargetFrame" style="WIDTH: 100%" type="text" onkeyup="OnTargetNameChange();"
+							onchange="OnTargetNameChange();" />
+					</td>
+					<td id="tdPopupName" style="DISPLAY: none" nowrap="nowrap" width="100%">
+						<span Lang="DlgLnkPopWinName">Popup Window Name</span><br />
+						<input id="txtPopupName" style="WIDTH: 100%" type="text" />
+					</td>
+				</tr>
+			</table>
+			<br />
+			<table id="tablePopupFeatures" style="DISPLAY: none" cellspacing="0" cellpadding="0" align="center"
+				border="0">
+				<tr>
+					<td>
+						<span Lang="DlgLnkPopWinFeat">Popup Window Features</span><br />
+						<table cellspacing="0" cellpadding="0" border="0">
+							<tr>
+								<td valign="top" nowrap="nowrap" width="50%">
+									<input id="chkPopupResizable" name="chkFeature" value="resizable" type="checkbox" /><label for="chkPopupResizable" Lang="DlgLnkPopResize">Resizable</label><br />
+									<input id="chkPopupLocationBar" name="chkFeature" value="location" type="checkbox" /><label for="chkPopupLocationBar" Lang="DlgLnkPopLocation">Location
+										Bar</label><br />
+									<input id="chkPopupManuBar" name="chkFeature" value="menubar" type="checkbox" /><label for="chkPopupManuBar" Lang="DlgLnkPopMenu">Menu
+										Bar</label><br />
+									<input id="chkPopupScrollBars" name="chkFeature" value="scrollbars" type="checkbox" /><label for="chkPopupScrollBars" Lang="DlgLnkPopScroll">Scroll
+										Bars</label>
+								</td>
+								<td></td>
+								<td valign="top" nowrap="nowrap" width="50%">
+									<input id="chkPopupStatusBar" name="chkFeature" value="status" type="checkbox" /><label for="chkPopupStatusBar" Lang="DlgLnkPopStatus">Status
+										Bar</label><br />
+									<input id="chkPopupToolbar" name="chkFeature" value="toolbar" type="checkbox" /><label for="chkPopupToolbar" Lang="DlgLnkPopToolbar">Toolbar</label><br />
+									<input id="chkPopupFullScreen" name="chkFeature" value="fullscreen" type="checkbox" /><label for="chkPopupFullScreen" Lang="DlgLnkPopFullScrn">Full
+										Screen (IE)</label><br />
+									<input id="chkPopupDependent" name="chkFeature" value="dependent" type="checkbox" /><label for="chkPopupDependent" Lang="DlgLnkPopDependent">Dependent
+										(Netscape)</label>
+								</td>
+							</tr>
+							<tr>
+								<td valign="top" nowrap="nowrap" width="50%">&nbsp;</td>
+								<td></td>
+								<td valign="top" nowrap="nowrap" width="50%"></td>
+							</tr>
+							<tr>
+								<td valign="top">
+									<table cellspacing="0" cellpadding="0" border="0">
+										<tr>
+											<td nowrap="nowrap"><span Lang="DlgLnkPopWidth">Width</span></td>
+											<td>&nbsp;<input id="txtPopupWidth" type="text" maxlength="4" size="4" /></td>
+										</tr>
+										<tr>
+											<td nowrap="nowrap"><span Lang="DlgLnkPopHeight">Height</span></td>
+											<td>&nbsp;<input id="txtPopupHeight" type="text" maxlength="4" size="4" /></td>
+										</tr>
+									</table>
+								</td>
+								<td>&nbsp;&nbsp;</td>
+								<td valign="top">
+									<table cellspacing="0" cellpadding="0" border="0">
+										<tr>
+											<td nowrap="nowrap"><span Lang="DlgLnkPopLeft">Left Position</span></td>
+											<td>&nbsp;<input id="txtPopupLeft" type="text" maxlength="4" size="4" /></td>
+										</tr>
+										<tr>
+											<td nowrap="nowrap"><span Lang="DlgLnkPopTop">Top Position</span></td>
+											<td>&nbsp;<input id="txtPopupTop" type="text" maxlength="4" size="4" /></td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="divAttribs" style="DISPLAY: none">
+			<table cellspacing="0" cellpadding="0" width="100%" align="center" border="0">
+				<tr>
+					<td valign="top" width="50%">
+						<span Lang="DlgGenId">Id</span><br />
+						<input id="txtAttId" style="WIDTH: 100%" type="text" />
+					</td>
+					<td width="1"></td>
+					<td valign="top">
+						<table cellspacing="0" cellpadding="0" width="100%" align="center" border="0">
+							<tr>
+								<td width="60%">
+									<span Lang="DlgGenLangDir">Language Direction</span><br />
+									<select id="cmbAttLangDir" style="WIDTH: 100%">
+										<option value="" Lang="DlgGenNotSet" selected>&lt;not set&gt;</option>
+										<option value="ltr" Lang="DlgGenLangDirLtr">Left to Right (LTR)</option>
+										<option value="rtl" Lang="DlgGenLangDirRtl">Right to Left (RTL)</option>
+									</select>
+								</td>
+								<td width="1%">&nbsp;&nbsp;&nbsp;</td>
+								<td nowrap="nowrap"><span Lang="DlgGenAccessKey">Access Key</span><br />
+									<input id="txtAttAccessKey" style="WIDTH: 100%" type="text" maxlength="1" size="1" />
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" width="50%">
+						<span Lang="DlgGenName">Name</span><br />
+						<input id="txtAttName" style="WIDTH: 100%" type="text" />
+					</td>
+					<td width="1"></td>
+					<td valign="top">
+						<table cellspacing="0" cellpadding="0" width="100%" align="center" border="0">
+							<tr>
+								<td width="60%">
+									<span Lang="DlgGenLangCode">Language Code</span><br />
+									<input id="txtAttLangCode" style="WIDTH: 100%" type="text" />
+								</td>
+								<td width="1%">&nbsp;&nbsp;&nbsp;</td>
+								<td nowrap="nowrap">
+									<span Lang="DlgGenTabIndex">Tab Index</span><br />
+									<input id="txtAttTabIndex" style="WIDTH: 100%" type="text" maxlength="5" size="5" />
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" width="50%">&nbsp;</td>
+					<td width="1"></td>
+					<td valign="top"></td>
+				</tr>
+				<tr>
+					<td valign="top" width="50%">
+						<span Lang="DlgGenTitle">Advisory Title</span><br />
+						<input id="txtAttTitle" style="WIDTH: 100%" type="text" />
+					</td>
+					<td width="1">&nbsp;&nbsp;&nbsp;</td>
+					<td valign="top">
+						<span Lang="DlgGenContType">Advisory Content Type</span><br />
+						<input id="txtAttContentType" style="WIDTH: 100%" type="text" />
+					</td>
+				</tr>
+				<tr>
+					<td valign="top">
+						<span Lang="DlgGenClass">Stylesheet Classes</span><br />
+						<input id="txtAttClasses" style="WIDTH: 100%" type="text" />
+					</td>
+					<td></td>
+					<td valign="top">
+						<span Lang="DlgGenLinkCharset">Linked Resource Charset</span><br />
+						<input id="txtAttCharSet" style="WIDTH: 100%" type="text" />
+					</td>
+				</tr>
+			</table>
+			<table cellspacing="0" cellpadding="0" width="100%" align="center" border="0">
+				<tr>
+					<td>
+						<span Lang="DlgGenStyle">Style</span><br />
+						<input id="txtAttStyle" style="WIDTH: 100%" type="text" />
+					</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>

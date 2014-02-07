@@ -1,0 +1,139 @@
+<html>
+<head>
+<meta name=vs_targetSchema content="HTML 4.0">
+<meta name="GENERATOR" content="Microsoft Visual Studio 7.0">
+<LINK rel="stylesheet" type="text/css" href="dialog.css">
+<title>插入表格</title>
+<script language="JavaScript">
+function attr(name, value) {
+	if (!value || value == "") return "";
+	return ' ' + name + '="' + value + '"';
+}
+
+   function explore(obj, pnt) {
+      var i;
+      for (i in obj) {
+         alert(i +"="+obj[i]);
+      }
+   }
+
+function insertTable() {
+
+
+   // use DOM functions to create the table in the dlg_ins_table window
+   // and then return the innerHTML of the DIV containing the table
+
+	var nRows = rows.value ? parseInt(rows.value) : 2;
+	var nCols = cols.value ? parseInt(cols.value) : 2;
+
+   // create the div that will contain the table
+   var d = document.body.appendChild( document.createElement("DIV") );
+
+   // create the table in the div
+   var t = d.appendChild( document.createElement("TABLE") );
+   var tb = t.appendChild( document.createElement("TBODY") );
+   
+	for (var i = 0; i < nRows; i++) {
+      var tr = tb.appendChild( document.createElement("TR") );
+		for (var j = 0; j < nCols; j++) {
+            var td = tr.appendChild( document.createElement("TD") );
+            td.style.height = rowHeight.value;
+            td.style.width = colWidth.value;
+		}
+	}
+
+   // set table properties
+   t.border = borderWidth.value;
+   t.bordercolor = borderColor.value;
+   t.cellspacing = cellSpacing.value;
+   t.cellpadding = cellPadding.value;
+   t.bgcolor = backgroundColor.value;
+
+   window.returnValue = d.innerHTML;
+   window.close();
+}
+
+function cancel() {
+	window.returnValue = null;
+	window.close();
+}
+</script>
+</head>
+
+<body topmargin="0" leftmargin="0" style="border: 0; margin: 0;" scroll="no">
+<table class="dlg" cellpadding="0" cellspacing="0" width="321" height="100%">
+<tr><td colspan="5" width="321">
+	<table border="0" width="100%" cellspacing="0" cellpadding="0" id="table1">
+		<tr>
+			<td width="35">布局</td>
+			<td><hr align="left"></td>
+		</tr>
+	</table>
+	</td></tr>
+<tr>
+ <td width="10">　</td>
+ <td width="70" align="right">行&nbsp;&nbsp;&nbsp; 数:</td>
+	<td valign="middle" width="40"><input type="text" name="rows" value="2" size="5"></td>
+ <td width="114" align="right">单元格衬距:</td><td valign="middle" width="84"><input type="text" name="cellPadding" value="0" size="5"></td>
+</tr>
+<tr>
+ <td width="10">　</td>
+ <td width="70" align="right">列&nbsp;&nbsp;&nbsp; 数:</td>
+	<td valign="middle" width="40"><input type="text" name="cols" value="2" size="5"></td>
+ <td width="114" align="right">单元格间距:</td><td valign="middle" width="84"><input type="text" name="cellSpacing" value="0" size="5"></td>
+</tr>
+<tr>
+ <td width="10">　</td>
+ <td width="70" align="right">指定高度:</td><td valign="middle" width="40"><input type="text" name="rowHeight" value="20" size="5"></td>
+ <td width="114">　</td>
+ <td width="84">　</td>
+</tr>
+<tr>
+ <td width="10">　</td>
+ <td width="70" align="right">指定宽度:</td><td valign="middle" width="40"><input type="text" name="colWidth" value="100" size="5"></td>
+ <td width="114">　</td>
+ <td width="84">　</td>
+</tr>
+<tr><td colspan="5" width="321">
+	<table border="0" width="100%" cellspacing="0" cellpadding="0" id="table3">
+		<tr>
+			<td width="35">边框</td>
+			<td><hr width="100%"></td>
+		</tr>
+	</table>
+	</td></tr>
+<tr>
+ <td width="10">　</td>
+ <td width="70">
+	<p align="right">宽&nbsp;&nbsp;&nbsp; 度:</td><td valign="middle" width="40"><input type="text" name="borderWidth" value="1" size="5"></td>
+ <td width="114">
+	<p align="right">颜&nbsp;&nbsp;&nbsp; 色:</td><td valign="middle" width="84"><input type="text" name="borderColor" value="black" size="10"></td>
+</tr>
+<tr><td colspan="5" width="321">
+	<table border="0" width="100%" cellspacing="0" cellpadding="0" id="table2">
+		<tr>
+			<td width="35">背景</td>
+			<td><hr width="100%"></td>
+		</tr>
+	</table>
+	</td></tr>
+<tr>
+ <td width="10">　</td>
+ <td width="70">
+	<p align="right">颜&nbsp;&nbsp;&nbsp; 色:</td>
+	<td valign="middle" width="241" colspan="3"><input type="text" name="backgroundColor" value="" size="15"></td>
+</tr>
+<tr><td colspan="5" width="321"><hr width="95%"></td></tr>
+<tr>
+ <td width="10">　</td>
+ <td width="70"><td colspan="3" align="right" width="241"><input class="button" type="button" value="插入" title="插入表格" onclick="insertTable()">
+<input class="button" type="button" value="取消" title="取消" onclick="cancel()"></td>
+</tr>
+</table>
+<table border="1" width="372" height="1">
+	<tr>
+		<td height="1" width="372"></td>
+	</tr>
+</table>
+</body>
+</html>

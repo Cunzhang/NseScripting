@@ -1,0 +1,207 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>TDeditor</title>
+	<meta name="robots" content="noindex, nofollow">
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+	<meta http-equiv="Cache-Control" content="public" />
+	<script type="text/javascript">
+
+// Instead of loading scripts and CSSs using inline tags, all scripts are
+// loaded by code. In this way we can guarantee the correct processing order,
+// otherwise external scripts and inline scripts could be executed in an
+// unwanted order (IE).
+
+function LoadScript( url )
+{
+	document.write( '<scr' + 'ipt type="text/javascript" src="' + url + '"><\/scr' + 'ipt>' ) ;
+}
+
+function LoadCss( url )
+{
+	document.write( '<link href="' + url + '" type="text/css" rel="stylesheet" />' ) ;
+}
+
+// Main editor scripts.
+var sSuffix = ( /*@cc_on!@*/false ) ? 'ie' : 'gecko' ;
+
+LoadScript( 'js/editorcode_' + sSuffix + '.js' ) ;
+
+// Base configuration file.
+LoadScript( 'config.js' ) ;
+
+	</script>
+	<script type="text/javascript">
+
+if ( TDBrowserInfo.IsIE )
+{
+	// Remove IE mouse flickering.
+	try
+	{
+		document.execCommand( 'BackgroundImageCache', false, true ) ;
+	}
+	catch (e)
+	{
+		// We have been reported about loading problems caused by the above
+		// line. For safety, let's just ignore errors.
+	}
+
+	// Create the default cleanup object used by the editor.
+	TD.IECleanup = new TDIECleanup( window ) ;
+	TD.IECleanup.AddItem( TDTempBin, TDTempBin.Reset ) ;
+	TD.IECleanup.AddItem( TD, TD_Cleanup ) ;
+}
+
+// The first function to be called on selection change must the the styles
+// change checker, because the result of its processing may be used by another
+// functions listening to the same event.
+TD.Events.AttachEvent( 'OnSelectionChange', function() { TDStyles.CheckSelectionChanges() ; } ) ;
+
+// The config hidden field is processed immediately, because
+// CustomConfigurationsPath may be set in the page.
+TDConfig.ProcessHiddenField() ;
+
+// Load the custom configurations file (if defined).
+if ( TDConfig.CustomConfigurationsPath.length > 0 )
+	LoadScript( TDConfig.CustomConfigurationsPath ) ;
+
+	</script>
+	<script type="text/javascript">
+
+// Load configurations defined at page level.
+TDConfig_LoadPageConfig() ;
+
+TDConfig_PreProcess() ;
+
+// Load the active skin CSS.
+LoadCss( TDConfig.SkinPath + 'editor.css' ) ;
+
+// Load the language file.
+TDLanguageManager.Initialize() ;
+LoadScript( 'lang/' + TDLanguageManager.ActiveLanguage.Code + '.js' ) ;
+
+	</script>
+	<script type="text/javascript">
+
+// Initialize the editing area context menu.
+TD_ContextMenu_Init() ;
+
+TDPlugins.Load() ;
+
+	</script>
+	<script type="text/javascript">
+
+// Set the editor interface direction.
+window.document.dir = TDLang.Dir ;
+
+	</script>
+	<script type="text/javascript">
+
+window.onload = function()
+{
+	InitializeAPI() ;
+
+	if ( TDBrowserInfo.IsIE )
+		TD_PreloadImages() ;
+	else
+		LoadToolbarSetup() ;
+}
+
+function LoadToolbarSetup()
+{
+	TDeditorAPI._FunctionQueue.Add( LoadToolbar ) ;
+}
+
+function LoadToolbar()
+{
+	var oToolbarSet = TD.ToolbarSet = TDToolbarSet_Create() ;
+
+	if ( oToolbarSet.IsLoaded )
+		StartEditor() ;
+	else
+	{
+		oToolbarSet.OnLoad = StartEditor ;
+		oToolbarSet.Load( TDURLParams['Toolbar'] || 'Default' ) ;
+	}
+}
+
+function StartEditor()
+{
+	// Remove the onload listener.
+	TD.ToolbarSet.OnLoad = null ;
+
+	TDeditorAPI._FunctionQueue.Remove( LoadToolbar ) ;
+
+	TD.Events.AttachEvent( 'OnStatusChange', WaitForActive ) ;
+
+	// Start the editor.
+	TD.StartEditor() ;
+}
+
+function WaitForActive( editorInstance, newStatus )
+{
+	if ( newStatus == TD_STATUS_ACTIVE )
+	{
+		if ( TDBrowserInfo.IsGecko )
+			TDTools.RunFunction( window.onresize ) ;
+
+		_AttachFormSubmitToAPI() ;
+
+		TD.SetStatus( TD_STATUS_COMPLETE ) ;
+
+		// Call the special "TDeditor_OnComplete" function that should be present in
+		// the HTML page where the editor is located.
+		if ( typeof( window.parent.TDeditor_OnComplete ) == 'function' )
+			window.parent.TDeditor_OnComplete( TD ) ;
+	}
+}
+
+// Gecko browsers doens't calculate well that IFRAME size so we must
+// recalculate it every time the window size changes.
+if ( TDBrowserInfo.IsGecko )
+{
+	function Window_OnResize()
+	{
+		if ( TDBrowserInfo.IsOpera )
+			return ;
+
+		var oCell = document.getElementById( 'xEditingArea' ) ;
+
+		var eInnerElement = oCell.firstChild ;
+		if ( eInnerElement )
+		{
+			eInnerElement.style.height = 0 ;
+			eInnerElement.style.height = oCell.scrollHeight - 2 ;
+		}
+	}
+	window.onresize = Window_OnResize ;
+}
+
+	</script>
+</head>
+<body>
+	<table width="100%" cellpadding="0" cellspacing="0" style="height: 100%; table-layout: fixed">
+		<tr id="xToolbarRow" style="display: none">
+			<td id="xToolbarSpace" style="overflow: hidden">
+				<table width="100%" cellpadding="0" cellspacing="0">
+					<tr id="xCollapsed" style="display: none">
+						<td id="xExpandHandle" class="TB_Expand" colspan="3">
+							<img class="TB_ExpandImg" alt="" src="images/spacer.gif" width="8" height="4" /></td>
+					</tr>
+					<tr id="xExpanded" style="display: none">
+						<td id="xTBLeftBorder" class="TB_SideBorder" style="width: 1px; display: none;"></td>
+						<td id="xCollapseHandle" style="display: none" class="TB_Collapse" valign="bottom">
+							<img class="TB_CollapseImg" alt="" src="images/spacer.gif" width="8" height="4" /></td>
+						<td id="xToolbar" class="TB_ToolbarSet"></td>
+						<td class="TB_SideBorder" style="width: 1px"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id="xEditingArea" valign="top" style="height: 100%"></td>
+		</tr>
+	</table>
+</body>
+</html>

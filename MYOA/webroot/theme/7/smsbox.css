@@ -1,0 +1,18 @@
+html { overflow-y: scroll; }
+body {font-family: Tahoma,Arial,Helvetica,Sans-Serif; background: #E7F1F8; margin: 0px; padding: 0px;}
+/* other */
+img {border: none; vertical-align: middle;}
+
+a:link{color: #0066cc; text-decoration: none;}
+a:visited{color: #0066cc; text-decoration: none;}
+a:hover {color: #333333; text-decoration: underline;}
+a:active{color: #0066cc; text-decoration: underline;}
+
+.module {border: 1px #dedcd8 solid; background: white; padding: 1px;margin-bottom:10px;}
+.moduleHeader {border-bottom: 1px #dedcd8 dotted; padding: 3px 1%; margin: 0; font-size: 12px; font-weight: bold; width: 98%; overflow: hidden; line-height: 16px; background: #f4f3f0 url('list_hd_bg.png') top left repeat-x;}
+.module_body {font-size: 9pt;margin: 0 !important; width: 98% !important; overflow: hidden !important; padding: 10px 1% !important;}
+.module_page{float:right;}
+
+.listColor {border: 1px #b8d1e2 solid; color: #003366;}
+.listColor .moduleHeader {background: #e3eef2 url(list_hd_bg.png) repeat-x scroll left top; border-bottom: 1px #b8d1e2 dotted;}
+.listColor .module_body {background: #f4f8f9;}

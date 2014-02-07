@@ -1,0 +1,45 @@
+BODY
+{
+    BORDER-RIGHT: 0px;
+    BORDER-TOP: 0px;
+    MARGIN: 0px;
+    BORDER-LEFT: 0px;
+    BORDER-BOTTOM: 0px
+}
+TD
+{
+    FONT-SIZE: 9pt;
+    FONT-FAMILY: ËÎÌו,Verdana,Arial
+}
+TABLE.Menu
+{
+    BORDER-RIGHT: buttonshadow 1px solid;
+    BORDER-TOP: window 1px solid;
+    BORDER-LEFT: window 1px solid;
+    BORDER-BOTTOM: buttonshadow 1px solid;
+    BACKGROUND-COLOR: #0072bc
+}
+TD.RightBg
+{
+    BACKGROUND-COLOR: buttonface
+}
+TD.MouseOver
+{
+    CURSOR: default;
+    COLOR: highlighttext;
+    BACKGROUND-COLOR: highlight
+}
+TD.MouseOut
+{
+    CURSOR: default;
+    COLOR: buttontext;
+    BACKGROUND-COLOR: buttonface
+}
+TD.HrShadow
+{
+    BACKGROUND-COLOR: buttonshadow
+}
+TD.HrHighLight
+{
+    BACKGROUND-COLOR: buttonhighlight
+}

@@ -1,0 +1,272 @@
+A:link { COLOR: #0000FF; TEXT-DECORATION: none;}
+A:visited { COLOR: #0000FF; TEXT-DECORATION: none}
+A:active  { COLOR: #3333ff; TEXT-DECORATION: none}
+A:hover   { COLOR: #ff0000; TEXT-DECORATION: none}
+
+A.A1:link { COLOR: #45566B; TEXT-DECORATION: underline;}
+A.A1:visited { COLOR: #45566B; TEXT-DECORATION: underline}
+A.A1:active  { COLOR: #3333ff; TEXT-DECORATION: underline}
+A.A1:hover   { COLOR: #ff0000; TEXT-DECORATION: underline}
+img{border:0px;}
+body { font-size: 12pt;}
+.bodycolor { BACKGROUND: #DDE4EA;background-image: url("bg.jpg")}
+.loginbodycolor { BACKGROUND: #6BA2D8}
+.topbar {font-size: 9pt;BACKGROUND: #C0D5F0;background-image:url("topbar.jpg")}
+.topbar2 {font-size: 9pt;BACKGROUND: #C4D9EF; background-image: url("headerbg.gif")}
+#Nav A { POSITION: relative; COLOR:#122A6B;}
+#Nav A:hover { BACKGROUND-COLOR: #F896D8; COLOR:#FFFFFF; PADDING-LEFT: 0px; PADDING-RIGHT: 0px;  PADDING-TOP: 4px;  PADDING-BOTTOM: 4px; MARGIN: 0px;}
+
+.panel{ BACKGROUND: #D4D5E6; COLOR:#FFFFFF;}
+.timebar{ BACKGROUND: #D9D9D9;}
+.statusbar{ background-image:url("statusbar.gif")}
+.menu_tr1{ font-size: 9pt;COLOR:#000000;cursor:pointer}
+.menu_tr2{ font-size: 9pt;COLOR:#000000;cursor:pointer}
+
+.small  { font-size: 9pt;}
+.small1  { font-size: 9pt;COLOR: #45566B;}
+.big { font-size: 12pt;}
+.big1   { font-size: 12pt;COLOR: #45566B}
+.big2   { font-size: 18pt}
+.big3   { font-size: 12pt;COLOR: #45566B;FONT-WEIGHT: bold;}
+.big4   { COLOR: #FF0000;}
+.verybig{ font-size: 24pt}
+
+
+input.SmallButton, input.ArrowButton{ BORDER-RIGHT: #104a7b 1px solid black; BORDER-TOP: #afc4d5 1px solid black; BORDER-LEFT: #afc4d5 1px solid black; BORDER-BOTTOM: #104a7b 1px solid;
+background-image: url("button_back.gif"); CURSOR: hand; COLOR: #FFFFFF; HEIGHT: 22px; FONT-SIZE: 9pt; ;FONT-WEIGHT:bold; TEXT-DECORATION: none}
+
+input.BigButton  { BORDER-RIGHT: #104a7b 1px solid black; BORDER-TOP: #afc4d5 1px solid black; BORDER-LEFT: #afc4d5 1px solid black; BORDER-BOTTOM: #104a7b 1px solid;
+background-image: url("button_back.gif"); CURSOR: hand; COLOR: #FFFFFF; HEIGHT: 26px; FONT-WEIGHT:bold;FONT-SIZE: 11pt; TEXT-DECORATION: none}
+
+
+input.SmallInput { COLOR: #000066; BACKGROUND: #F8F8F8; border:1 solid black; FONT-SIZE: 9pt; FONT-STYLE: normal; FONT-VARIANT: normal; FONT-WEIGHT: normal; HEIGHT: 18px; LINE-HEIGHT: normal}
+input.SmallInput1{ COLOR: #000066; BACKGROUND: #F8F8F8; border:1 solid black; BORDER-RIGHT:0; FONT-SIZE: 9pt; FONT-STYLE: normal; FONT-VARIANT: normal; FONT-WEIGHT: normal; HEIGHT: 18px; LINE-HEIGHT: normal}
+input.BigInput   { COLOR: #000066; BACKGROUND: #F8F8F8; border:1 solid black; BORDER-BOTTOM:1px double; FONT-SIZE: 12pt; FONT-STYLE: normal; FONT-VARIANT: normal; FONT-WEIGHT: normal; HEIGHT: 22px; LINE-HEIGHT: normal}
+input.BigInputMoney{COLOR:#000066; BACKGROUND: #F8F8F8; text-align: RIGHT; border:1 solid black; BORDER-BOTTOM:1px double; FONT-SIZE: 12pt; FONT-STYLE: normal; FONT-VARIANT: normal; FONT-WEIGHT: normal; HEIGHT: 22px; LINE-HEIGHT: normal}
+
+input.SmallStatic{ COLOR: #000066; BACKGROUND: #E0E0E0; border:1 solid black; FONT-SIZE: 9pt; FONT-STYLE: normal; FONT-VARIANT: normal; FONT-WEIGHT: normal; HEIGHT: 18px; LINE-HEIGHT: normal}
+input.BigStatic  { COLOR: #000066; BACKGROUND: #E0E0E0; border:1 solid black; BORDER-BOTTOM:1px double; FONT-SIZE: 12pt; FONT-STYLE: normal; FONT-VARIANT: normal; FONT-WEIGHT: normal; HEIGHT: 22px; LINE-HEIGHT: normal}
+
+
+select.BigSelect  { COLOR: #000066; BACKGROUND: #F8F8F8; border:1 solid black; BORDER-BOTTOM:1px double; FONT-SIZE: 12pt; FONT-STYLE: normal; FONT-VARIANT: normal; FONT-WEIGHT: normal; HEIGHT: 22px; LINE-HEIGHT: normal}
+select.SmallSelect{ COLOR: #000066; BACKGROUND: #F8F8F8; border:1 solid black; BORDER-BOTTOM:1px double; FONT-SIZE: 9pt; FONT-STYLE: normal; FONT-VARIANT: normal; FONT-WEIGHT: normal; HEIGHT: 18px; LINE-HEIGHT: normal}
+
+select.BigStatic  { COLOR: #000066; BACKGROUND: #E0E0E0; border:1 solid black; BORDER-BOTTOM:1px double; FONT-SIZE: 12pt; FONT-STYLE: normal; FONT-VARIANT: normal; FONT-WEIGHT: normal; HEIGHT: 22px; LINE-HEIGHT: normal}
+select.SmallStatic{ COLOR: #000066; BACKGROUND: #E0E0E0; border:1 solid black; FONT-SIZE: 9pt; FONT-STYLE: normal; FONT-VARIANT: normal; FONT-WEIGHT: normal; HEIGHT: 18px; LINE-HEIGHT: normal}
+
+
+textarea.BigInput { COLOR: #000066; BACKGROUND: #F8F8F8; border:1 solid black; BORDER-BOTTOM:1px double; FONT-SIZE: 10pt; FONT-STYLE: normal; FONT-VARIANT: normal; FONT-WEIGHT: normal;LINE-HEIGHT: normal;}
+textarea.BigStatic{ COLOR: #000066; BACKGROUND: #E0E0E0; border:1 solid black; BORDER-BOTTOM:1px double; FONT-SIZE: 10pt; FONT-STYLE: normal; FONT-VARIANT: normal; FONT-WEIGHT: normal;LINE-HEIGHT: normal;}
+
+
+.TableControl{ BACKGROUND: #DFE7EE}
+.TableHeader { BACKGROUND: #D3E5FA; COLOR:#122A6B; FONT-SIZE: 9pt; background-image: url("headerbg.gif") }
+.TableHeader1 { BACKGROUND: #D3E5FA; background-image: url("button_back.gif");  CURSOR: hand; COLOR: #000066;}
+.TableHeader2 { BACKGROUND: #D3E5FA; background-image: url("headerbg.gif");  CURSOR: hand; COLOR: #000066;FONT-WEIGHT: bold;}
+.TableContent{ BACKGROUND: #E2E8FA;}
+.TableData   { BACKGROUND: #FFFFFF;COLOR:#000000;}
+.TableLine1  { BACKGROUND: #F3F3F3;}
+.TableLine2  { BACKGROUND: #FFFFFF;}
+.TextColor1  { COLOR: #FF6600;}
+.TextColor2  { COLOR: #FF0000;}
+.top{ COLOR: #FF0000;font-weight:bold;}
+
+.percent { height: 12px; border: 1px solid #666666; float: left; padding: 0px;margin-top:3px;}
+.percent div {height: 8px;font-size: 0px;margin: 1px;}
+.percenttxt {float:left;font-size: 9pt;margin-top:1px;}
+.s_on{background:url(/images/topmenubg2.gif);font-size: 9pt;}
+.s_of{background:url(/images/topmenubg1.gif);font-size: 9pt;}
+.m_on{background:url(/images/topmenubg2.gif);font-size: 9pt;}
+.border14-1 {border: 1 solid #98BBD6;font-size: 14px;}/* 表格外框 */
+.border14-2 {border-bottom-width: 1px;border-bottom-style: solid;border-bottom-color: #98BBD6;border-right-width: 1px;border-right-style: solid;border-right-color: #98BBD6;font-size: 14px;}/* 表格边框右面 */
+.border14-3 {border-bottom-width: 1px;border-bottom-style: solid;border-bottom-color: #98BBD6;font-size: 14px;border-top-style: none;border-right-style: none;border-left-style: none;}/* 表格边框底面 */
+.border14-4 {border-right-width: 1px;border-right-style: solid;border-right-color: #98BBD6;font-size: 14px;}/* 表格边框左面 */
+.title_text {  font-size: 14px; font-weight: bold; color: #0A5FA2; }
+.table_border {  border-color: #98BBD6 #98BBD6 black; border-style: solid; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 0px; border-left-width: 1px}
+.table_bg {  background-attachment: fixed; background-image: url(table_bg.gif); background-repeat: repeat; background-position: left; border-color: #98BBD6 #98BBD6 black; border-style: solid; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 0px; border-left-width: 1px}
+.table_left {  background-attachment: fixed; background-image: url(table_left.gif); background-repeat: no-repeat; background-position: left}
+
+.attach_div{display:none;width:100px;border:1px #003366 solid;border-top:0px;position:absolute;padding:0px;z-index:10001;background:#E7F1F8;}
+.attach_div a{display:block;line-height:20px;padding:3 0 0 10px;border-top:1px #003366 dotted;width:100%;margin:3px;margin-top:0px;}
+.attach_div a:hover{background:#F6F9FD;border:1px #b8d1e2 solid;}
+
+
+/*  列表型表格样式  */
+.TableList{
+   border:1px #b8d1e2 solid;
+   line-height:21px;
+   font-size:9pt;
+   border-collapse:collapse;
+   padding:3px;
+}
+.TableList td{
+   padding:3px;
+   color:#476074;
+}
+.TableList .TableHeader td,
+.TableList td.TableHeader{
+   background:url("list_hd_bg.png");
+   border-bottom:1px #CCCCCC solid;
+   border-right:1px #CCCCCC solid;
+   font-weight:bold;
+   text-align:center;
+   color:#36434E;
+   padding:0px;
+}
+.TableList .TableLine1 td,
+.TableList td.TableLine1{
+   background:#F8F8F8;
+   border-top:1px #E4ECF3 solid;
+}
+.TableList .TableLine2 td,
+.TableList td.TableLine2{
+   background:#FFFFFF;
+   border-top:1px #E4ECF3 solid;
+}
+.TableList .TableData td,
+.TableList td.TableData{
+   background:#FFFFFF;
+   border-top:1px #E4ECF3 solid;
+}
+.TableList .TableContent td,
+.TableList td.TableContent{
+   background:#F0F0F0;
+   border-top:1px #E4ECF3 solid;
+}
+.TableList .TableFooter td,
+.TableList .TableControl td,
+.TableList td.TableFooter,
+.TableList td.TableControl{
+   background: #DFE7EE;
+   border:1px #E4ECF3 solid;
+}
+.TableList .TextColor1 td,
+.TableList td.TextColor1
+{
+   COLOR: #FF6600;
+}
+.TableList .TextColor2 td,
+.TableList td.TextColor2
+{
+   COLOR: #FF0000;
+}
+
+/*  block型表格样式  */
+.TableBlock{
+   border:1px #b8d1e2 solid;
+   line-height:20px;
+   font-size:9pt;
+   border-collapse:collapse;
+}
+.TableBlock td{
+   padding:3px;
+   color:#000000;
+}
+.TableBlock .TableHeader td,
+.TableBlock td.TableHeader{
+   background:url("list_hd_bg.png");
+   border:1px #b8d1e2 solid;
+   font-weight:bold;
+   color:#476074;
+   line-height:23px;
+   padding:0px;
+}
+.TableBlock .TableLine1 td,
+.TableBlock td.TableLine1{
+   background:#F8F8F8;
+   border-top:1px #CFDDEA solid;
+   border-right:1px #CFDDEA solid;
+}
+.TableBlock .TableLine2 td,
+.TableBlock td.TableLine2{
+   background:#FFFFFF;
+   border-top:1px #CFDDEA solid;
+   border-right:1px #CFDDEA solid;
+}
+.TableBlock .TableData td,
+.TableBlock td.TableData{
+   background:#FFFFFF;
+   border-top:1px #CFDDEA solid;
+   border-right:1px #CFDDEA solid;
+}
+.TableBlock .TableContent td,
+.TableBlock td.TableContent{
+   background:#F0F0F0;
+   border-top:1px #CFDDEA solid;
+   border-right:1px #CFDDEA solid;
+}
+.TableBlock .TableFooter td,
+.TableBlock .TableControl td,
+.TableBlock td.TableFooter,
+.TableBlock td.TableControl{
+   background: #DFE7EE;
+   border:1px #CFDDEA solid;
+}
+
+.Content{
+   line-height:normal;
+}
+
+.TableControl a{
+   color:#0066CC;
+   text-decoration: none;
+}
+
+.TableBlock .TableRowHover td,
+.TableBlock td.TableRowHover
+{
+   background:#DDE4EA;
+}
+
+.TableBlock .TableRowActive td,
+.TableBlock td.TableRowActive
+{
+   background:#b8d1e2;
+}
+/* 提示框样式 */
+.MessageBox{
+   height:90px;
+   border:1px #b8d1e2 dotted;
+   background:#FFFFFF;
+   margin-top:15px;
+   margin-bottom:15px;
+}
+.MessageBox td.msg{
+   padding:5px 20px 10px 90px;
+   font-weight:bold;
+}
+.MessageBox td.msg h4.title{
+   color:#36434E;
+   font-size:18pt;
+   border-bottom:1px #b8d1e2 dotted;
+   margin-bottom:10px;
+}
+.MessageBox td.msg div.content{
+   color:#FF6633;
+   border:none;
+}
+.MessageBox td.error{
+   background:url("/images/icon64_error.png") no-repeat top left;
+   background-position:10px 10px;
+}
+.MessageBox td.info{
+   background:url("/images/icon64_info.png") no-repeat top left;
+   background-position:10px 10px;
+}
+.MessageBox td.warning{
+   background:url("/images/icon64_warning.png") no-repeat top left;
+   background-position:10px 10px;
+}
+.MessageBox td.forbidden{
+   background:url("/images/icon64_forbidden.png") no-repeat top left;
+   background-position:10px 10px;
+}
+.MessageBox td.stop{
+   background:url("/images/icon64_stop.png") no-repeat top left;
+   background-position:10px 10px;
+}
+.MessageBox td.blank{
+   height:40px;
+   padding:10px 20px 10px 20px;
+   text-align:center;
+}

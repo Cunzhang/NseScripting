@@ -1,0 +1,53 @@
+
+.ccp_paramvalue {
+	color : #0000FF ;
+	font-family : "宋体";
+	font-size : 13px;
+}
+.ccp_htmlcomment {
+	color : #808080 ;
+	font-family : "宋体";
+	font-size : 12px;
+	font-style : italic;
+}
+.ccp_tag {
+	color : #000080;
+	font-family : "宋体";
+	font-size : 12px;
+}
+.ccp_img {
+	color : #800080;
+	font-family : "宋体";
+	font-size : 12px;
+}
+.ccp_A {
+	color : #008000;
+	font-family : "宋体";
+	font-size : 12px;
+}
+.ccp_form {
+	color : #FF8000;
+	font-family : "宋体";
+	font-size : 12px;
+}
+.ccp_table {
+	color : #008080;
+	font-family : "宋体";
+	font-size : 12px;
+}
+.ccp_entity {
+	color : #000000;
+	font-family : "宋体";
+	font-size : 12px;
+	font-weight : bold;
+}
+.ccp_styletag {
+	color : #800080;
+	font-family : "宋体";
+	font-size : 12px;
+}
+.ccp_styleitem {
+	color : #800080;
+	font-family : "宋体";
+	font-size : 12px;
+}

@@ -6,7 +6,7 @@ local table = require "table"
 description=[[
 Attempts to scan website file]]
 author="m0zh3"
-categories= {"default","discovery"}
+categories= {"recon","web"}
 
 -- The Rule Section --
 portrule = shortport.http

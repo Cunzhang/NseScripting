@@ -1,0 +1,45 @@
+#banner_text{
+   color:#404080;
+   FONT-WEIGHT:bold;
+   FONT-SIZE: 18pt;
+}
+#time{
+   text-align:right;
+   padding-top:3px;
+}
+
+#weather{
+   position:absolute;
+   text-align:right;
+   padding-top:8px;
+   right:50px;
+}
+#today{
+   position:absolute;
+   top:30px;
+   right:0px;
+}
+
+.city{
+   font-size:12pt;
+   font-weight:bold;
+   padding-right:3px;
+   cursor:hand;
+}
+
+.wind, .weather{
+   padding-right:3px;
+}
+
+.temperature{
+   padding-right:3px;
+}
+
+#area_select{
+   width:310px;
+   text-align:right;
+   position:absolute;
+   top:25px;
+   right:0px;
+   display:none;
+}

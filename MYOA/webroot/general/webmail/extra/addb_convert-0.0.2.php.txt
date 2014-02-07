@@ -1,0 +1,88 @@
+<?
+/************************************************************************
+
+addb_convert.php
+
+Developed by Rodrigo Henriquez (rhenriqu@linuxmail.org)
+to UebiMiau Project.
+
+UebiMiau is a GPL'ed software developed by 
+ - Aldoir Ventura - aldoir@users.sourceforge.net
+
+*************************************************************************/
+
+
+if ($submit) {
+
+   include "inc/config.php";
+
+   $filename = "/_infos/addressbook.ucf";
+
+
+   if ($dir = @opendir($temporary_directory)) {
+      while (($user_dir = readdir($dir)) != false) {
+
+         $addb_file = $temporary_directory.$user_dir.$filename;
+
+         if (file_exists($addb_file) ){
+            echo "<b>Addressbook file found in $addb_file</b> <br>";
+
+            // Reading Old
+            $fp = fopen($addb_file, "rb");
+            $old_format = fread($fp,filesize($addb_file));
+            fclose($fp);
+
+            // Writing New Format
+            $fp = fopen($addb_file, "wb");
+	    $new_format = ~$old_format;
+            fwrite($fp, base64_encode($new_format));
+            fclose($fp);
+
+            // Backup
+            $fp = fopen($addb_file.".old_format", "wb");
+            fwrite($fp, $old_format);
+            fclose($fp);
+            $i++;
+
+         } else {
+            echo "Addressbook file not found in $user_dir <br>";
+         } 
+      }
+      
+      echo "<br><hr width=50% align=left>\n";
+      echo "Total : <b>$i</b> updated addressbook file.<br>\n";
+      closedir($dir);
+
+   } else {
+      echo "<h1>Error</h1><hr width=50% align=left><br>\n";
+      echo "Old Temporary directory not found ($old_addb_dir).<br>\n";
+      echo "Try to changing the <b>\$old_addb_dir</b> variable in this script.<br><br>\n";
+      echo "<a href=$PHP_SELF>Go Back</a>\n";
+   }
+
+   exit;
+
+}
+
+?>
+<html>
+<head>
+<script language=JavaScript>
+
+function Validate() {
+   if ( confirm ('This will convert the old addressbook files to the newest version for all users.\nAre you sure?') ) return true 
+   return false;
+}
+</script>
+</head>
+
+<body>
+<h1>Addressbook Convert</h1>
+<h2>UebiMiau</h1>
+<hr width=50% align=left>
+
+<form onSubmit="return Validate()" name=frm method=post>
+<input type=submit name="submit" value="Click to Convert">
+</form>
+</body>
+</html>

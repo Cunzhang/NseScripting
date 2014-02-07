@@ -1,0 +1,38 @@
+{config_load file=$umLanguageFile section="Login"}
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<title>{#lgn_title#|escape:"html"}</title>
+	<link rel="stylesheet" href="themes/neotech.net/webmail.css" type="text/css">
+</head>
+
+{$umJS}
+
+<body bgcolor="#677CAD" text="#FFFFFF" link="#FFFFFF" vlink="#FFFFFF" alink="#FFFFFF" onload="myload()">
+<br><br><br>
+
+<table width="400" border="0" cellspacing="0" cellpadding="2" align="center">
+		<td bgcolor=white align=center>
+		<center><img src="themes/neotech.net/logo.gif" border=0></center>
+			<table width="100%" border="0" cellspacing="1" cellpadding="3" align="center">
+			<form name="form1" action="msglist.php" method=post>
+			  <tr><td align=right class="right" width="30%"><b>电子邮件</b>：&nbsp;</td><td class="default"><b>{$EMAIL}</b></td>
+				<tr><td align=right class="right" width="30%"><b>{#lng_user_name#}</b>：&nbsp;</td><td class="default"><input type=text size=30 name="EMAIL_USER1" value="{$EMAIL_USER1}" class="BigStatic" readonly><input type=hidden size=30 name="f_user" value="{$umUser}">{if $umAvailableServers neq 0} <span style="display:none"><b>{$umServer}</b></span>{/if}</td>
+				<tr><td align=right class="right" width="30%"><b>{#lng_user_pwd#}</b>：&nbsp;</td><td class="default"><input type=password size=20 name="f_pass" value="{$umPass}" class="textbox"></td>
+				<tr>
+				<td width="30%" class="right">&nbsp;</td>
+				<td class="default">
+				<input type=submit name=submit1 value="{#lng_login_btn#}" class="button">&nbsp;&nbsp;
+				<input type=button name=submit2 value="返 回" class="button" onclick="location='manage.php'">
+				</td>
+			</form>
+			</table>
+			<div style="font-size:9pt;BACKGROUND:#D3E5FA;COLOR:#FF6633;width=400;" id="wait_text"></div>
+		</td>
+	</tr>
+</td>
+</table>
+
+</body>
+</html>

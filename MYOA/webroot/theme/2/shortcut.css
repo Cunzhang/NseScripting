@@ -1,0 +1,70 @@
+*{padding:0px;margin:0px;}
+body {background: #E7F1F8 url('shortcut_bg.png') repeat-x top left; color:#FFFFFF;}
+img {border: none; vertical-align: middle;}
+
+A:link, A:visited, A:active, A:hover{ color: #FFFFFF; text-decoration: none;}
+
+.call_left{
+   width:21px;
+   height:21px;
+   margin-top:3px;
+   display:block;
+   background: url('call_left.png') no-repeat;
+}
+
+.call_right{
+   width:21px;
+   height:21px;
+   margin-top:3px;
+   display:block;
+   background: url('call_right.png') no-repeat;
+}
+
+.call_up{
+   width:21px;
+   height:21px;
+   position:absolute;
+   top:3px;
+   right:3px;
+   background: url('call_up.png') no-repeat;
+}
+
+.call_down{
+   width:21px;
+   height:21px;
+   position:absolute;
+   top:3px;
+   right:3px;
+   background: url('call_down.png') no-repeat;
+}
+
+#Nav_div{float:left;overflow:hidden;width:100%;height:28px;}
+
+#Nav_div ul {
+   list-style:none;
+   height:28px;
+   overflow:hidden;
+}
+#Nav_div li {
+  display:inline;
+}
+#Nav_div li a, #mytable{
+  float:left;
+  margin:2px 4px;
+  text-decoration:none;
+}
+#Nav_div li a span, #mytable span {
+  float:left;
+  display:block;
+  cursor:pointer;
+  padding:2px;
+  vertical-align:middle;
+}
+
+#Nav_div li a:hover, #mytable:hover{
+  background: #D6E4EF;
+}
+
+#Nav_div li a:hover span, #mytable:hover span {
+  color: #000000;
+}

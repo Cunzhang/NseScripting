@@ -1,0 +1,68 @@
+*{padding:0px;margin:0px;}
+body {background: #DDE4EA url('shortcut_bg.gif') repeat-x;}
+img {border: none; vertical-align: middle;}
+a:link, a:visited{color:#FFFFFF;}
+.call_left{
+   width:13px;
+   height:13px;
+   margin-top:6px;
+   display:block;
+   background: url('/images/call_left.gif') no-repeat;
+}
+
+.call_right{
+   width:13px;
+   height:13px;
+   margin-top:6px;
+   display:block;
+   background: url('/images/call_right.gif') no-repeat;
+}
+
+.call_up{
+   width:13px;
+   height:13px;
+   position:absolute;
+   top:9px;
+   right:3px;
+   background: url('/images/call_up.gif') no-repeat;
+}
+
+.call_down{
+   width:13px;
+   height:13px;
+   position:absolute;
+   top:9px;
+   right:3px;
+   background: url('/images/call_down.gif') no-repeat;
+}
+
+#Nav_div{float:left;overflow:hidden;width:100%;height:28px;}
+
+#Nav_div ul {
+   list-style:none;
+   height:28px;
+   overflow:hidden;
+}
+#Nav_div li {
+  display:inline;
+}
+#Nav_div li a, #mytable{
+  float:left;
+  margin:2px 4px;
+  text-decoration:none;
+}
+#Nav_div li a span, #mytable span {
+  float:left;
+  display:block;
+  cursor:pointer;
+  padding:2px;
+  vertical-align:middle;
+}
+
+#Nav_div li a:hover, #mytable:hover{
+  background: #E2E5E6;
+}
+
+#Nav_div li a:hover span, #mytable:hover span {
+  color: #000000;
+}

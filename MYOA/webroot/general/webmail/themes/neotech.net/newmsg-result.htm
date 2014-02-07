@@ -1,0 +1,68 @@
+{config_load file=$umLanguageFile section="Newmessage"}
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<title>ÐÂÓÊ¼þ</title>
+<link rel="stylesheet" href="themes/neotech.net/webmail.css" type="text/css">
+<script language="JavaScript" src="themes/neotech.net/webmail.js" type="text/javascript"></script>
+
+
+{$umJS}
+
+</head>
+
+<body bgcolor="#677CAD" text="#FFFFFF" link="#FFFFFF" vlink="#FFFFFF" alink="#FFFFFF">
+
+<table cellspacing=2 cellpadding=0 border=0 align=center bgcolor=White width="700">
+	<tr>
+		<td valign=top width="100%" align=center>
+		<a href="http://neotech.net"><img src="./themes/neotech.net/logo_cc.gif" border=0></a><br>
+		<img src="./themes/neotech.net/header.gif" border="0">
+			<table cellspacing=1 cellpadding=3 width="100%" border=0 bgcolor=White>
+			<tr align="center">
+				<td width=77 bgcolor="#EEE5DE" onmouseover="mOvr(this,'#D1D7ED');" onmouseout="mOut(this,'#EEE5DE');" onclick="mClk(this);"> <a class="menu" href="javascript:goinbox()"><img src="themes/neotech.net/inbox.gif" border=0></a><br>
+				<a class="menu" href="javascript:goinbox()">{#messages_mnu#}</a></td>
+				<td width=77 bgcolor="#EEE5DE" onmouseover="mOvr(this,'#D1D7ED');" onmouseout="mOut(this,'#EEE5DE');" onclick="mClk(this);"> <a class="menu" href="javascript:newmsg()"><img src="themes/neotech.net/compose.gif" border=0></a><br>
+				<a class="menu" href="javascript:newmsg()">{#compose_mnu#}</a></td>
+				<td width=77 bgcolor="#EEE5DE" onmouseover="mOvr(this,'#D1D7ED');" onmouseout="mOut(this,'#EEE5DE');" onclick="mClk(this);"> <a class="menu" href="javascript:refreshlist()"><img src="themes/neotech.net/refresh.gif" border=0></a><br>
+				<a class="menu" href="javascript:refreshlist()">{#refresh_mnu#}</a></td>
+				<td width=77 bgcolor="#EEE5DE" onmouseover="mOvr(this,'#D1D7ED');" onmouseout="mOut(this,'#EEE5DE');" onclick="mClk(this);"> <a class="menu" href="javascript:folderlist()"><img src="themes/neotech.net/folders.gif" border=0></a><br>
+				<a class="menu" href="javascript:folderlist()">{#folders_mnu#}</a></td>
+				<td width=77 bgcolor="#EEE5DE" onmouseover="mOvr(this,'#D1D7ED');" onmouseout="mOut(this,'#EEE5DE');" onclick="mClk(this);"> <a class="menu" href="javascript:search()"><img src="themes/neotech.net/search.gif" border=0></a><br>
+				<a class="menu" href="javascript:search()">{#search_mnu#}</a></td>
+				<td width=77 bgcolor="#EEE5DE" onmouseover="mOvr(this,'#D1D7ED');" onmouseout="mOut(this,'#EEE5DE');" onclick="mClk(this);"> <a class="menu" href="javascript:addresses()"><img src="themes/neotech.net/address.gif" border=0></a><br>
+				<a class="menu" href="javascript:addresses()">{#address_mnu#}</a></td>
+				<td width=77 bgcolor="#EEE5DE" onmouseover="mOvr(this,'#D1D7ED');" onmouseout="mOut(this,'#EEE5DE');" onclick="mClk(this);"> <a class="menu" href="javascript:emptytrash()"><img src="themes/neotech.net/trash.gif" border=0></a><br>
+				<a class="menu" href="javascript:emptytrash()">{#empty_trash_mnu#}</a></td>
+				<td width=77 bgcolor="#EEE5DE" onmouseover="mOvr(this,'#D1D7ED');" onmouseout="mOut(this,'#EEE5DE');" onclick="mClk(this);"> <a class="menu" href="javascript:prefs()"><img src="themes/neotech.net/preferences.gif" border=0></a><br>
+				<a class="menu" href="javascript:prefs()">{#prefs_mnu#}</a></td>
+				<td width=77 bgcolor="#EEE5DE" onmouseover="mOvr(this,'#D1D7ED');" onmouseout="mOut(this,'#EEE5DE');" onclick="mClk(this);"> <a class="menu" href="javascript:goend()"><img src="themes/neotech.net/logout.gif" border=0></a><br>
+				<a class="menu" href="javascript:goend()">{#logoff_mnu#}</a></td>
+			</tr></table>		
+		</td></tr>
+		<td valign=center bgcolor=white>
+			<table width="100%" border="0" cellspacing="1" cellpadding="0">
+			{if $umMailSent}
+				<tr>
+					<td class=cent>
+						{#result_success#}<br><br>
+						<a href="msglist.php?sid={$umSid}&tid={$umTid}&lid={$umLid}">{#nav_continue#}</a>
+					</td>
+				</tr>
+			{else}
+				<tr>
+					<td class=cent>
+						{#result_error#}<br><br>
+						<font color=red>{$umErrorMessage}</font><br><br>
+						<a href="javascript:history.go(-1)">{#nav_back#}</a>
+					</td>
+				</tr>
+			{/if}
+			</table>
+		</td>
+	</tr>
+</table>
+</body>
+</html>
+

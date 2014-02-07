@@ -1,0 +1,50 @@
+body{background:url("topbar_bg.png");color:#2E618B;font-size:9pt;}
+
+A:link, A:visited, A:active, A:hover{ color: #2E618B; text-decoration: underline;}
+
+.topbar{background:url("topbar_left_bg.png") top left no-repeat;}
+#banner_text{
+   color:#2E618B;
+   WIDTH: 100%;
+   FONT-WEIGHT:bold;
+   FONT-SIZE: 18pt;
+}
+#time{
+   text-align:right;
+   padding-top:5px;
+}
+#weather{
+   position:absolute;
+   text-align:right;
+   padding-top:8px;
+   padding-right:10px;
+   right:50px;
+}
+#today{
+   position:absolute;
+   top:30px;
+   right:0px;
+   padding-right:5px;
+}
+
+.city{
+   font-weight:bold;
+   cursor:pointer;
+}
+
+.wind, .weather{
+   padding-right:3px;
+}
+
+.temperature{
+   padding-right:3px;
+}
+
+#area_select{
+   width:310px;
+   text-align:right;
+   position:absolute;
+   top:25px;
+   right:0px;
+   display:none;
+}

@@ -1,0 +1,90 @@
+body {font-family: Tahoma,Arial,Helvetica,Sans-Serif; background: #eeebe8; margin: 0px; padding: 0px;}
+/* other */
+img {border: none; vertical-align: middle;}
+
+a:link{color: #0066cc; text-decoration: none;}
+a:visited{color: #0066cc; text-decoration: none;}
+a:hover {color: #333333; text-decoration: underline;}
+a:active{color: #0066cc; text-decoration: underline;}
+
+/****** Header ******/
+.header {background: #e4e0da url('bg_header.png') top left repeat-x; height: 73px; color: #666666;padding: 0 20px;}
+.header .title {float: left; margin-top: 16px; font-size: 75%; line-height: 150%;}
+.header .title img {float: left; margin-right: 6px;}
+.header .title h1 {font-size: 150%; font-weight: bold; padding: 6px 0px 0px 0px; margin: 0px;}
+/* top nav menu */
+.header .menu {font-size: 75%; line-height: 150%; padding-top: 16px; float: right;}
+.header .menu a {float: left; display: block; padding: 4px 8px; margin: 0px 5px 0px 0px; color: #666666; text-decoration: none;}
+.header .menu a:hover {color: white; background: #666666;}
+.header .date {font-weight:bold;}
+
+ul {
+	margin: 0;
+	margin-left: 3px;
+	padding: 0;
+	overflow:hidden;
+	line-height:20px;
+}
+li {
+	margin: 0 0 0 15px;
+	padding: 0px 0 0px 0;
+	list-style-type: disc;
+}
+
+li a:link{color: #333333; text-decoration: none}
+li a:visited {color: #333333; text-decoration: none}
+li a:hover {color: #333333; text-decoration: underline}
+li a:active {color: #333333; text-decoration: underline}
+
+img{
+	border:0px;
+	vertical-align:middle
+}
+
+#overlay {	DISPLAY: none; Z-INDEX: 10000; height:100%;BACKGROUND: #000; FILTER: alpha(opacity=50); LEFT: 0px; POSITION: absolute; TOP: 0px; opacity: 0}
+
+.dialogBlock {margin: 10px auto; clear: both; position: absolute; top: 100px;  z-index: 10002;}
+.dialogBlock .menu {float: left; width: 120px;}
+.dialogBlock .menu a {display: block; padding: 3px 10px; margin-bottom: 5px; color: #645A44; text-decoration: none; text-align: center; background: transparent; border: 1px solid white;}
+.dialogBlock .menu a:hover {color: #395500; text-decoration: none !important; background: #F4FADF url('bg_input_btn_hover.png'); border-color: #99CC00; border-bottom-color: #80AA00; border-right-color: #80AA00;}
+.dialogBlock .menu .current {border-color: #C8C4BB; border-bottom-color: #ABA498; border-right-color: #ABA498; background: #F4FBE1 url('bg_input_btn.png');}
+.dialogBlock .subContent {float: right; width: 500px; color: #663300; border: 1px #b8d1e2 solid; background: white url('bg_input_text.png') top left repeat-x;}
+
+/* Add RSS Dialog */
+.dialogBlock .rssList {margin: 6px 0 12px 20px; overflow: hidden; width: 450px;}
+.dialogBlock .rssList h4 {font-size: 12px; margin: 5px 0;}
+.dialogBlock .rssList li {list-style: none; margin-left: 0;}
+.dialogBlock .rssCatagory {float: left; padding-right: 10px;}
+.dialogBlock .rssCatagory li {background: transparent url('/images/rss.png') top left no-repeat; padding-left: 24px; width: 120px; height: 20px; overflow: hidden;}
+
+.module {border: 1px #dedcd8 solid; background: white; padding: 1px;margin-top:10px;margin-left:10px;}
+.moduleHeader {border-bottom: 1px #dedcd8 dotted; padding: 3px 1%; margin: 0; font-size: 12px; width: 98%; overflow: hidden; font-weight: normal; line-height: 14px; background: #f4f3f0 url('module_hd_bg.png') top left repeat-x;}
+.moduleHeader .icon {float: left; padding: 3px 3px 0px;}
+.moduleHeader .title {padding: 2px 3px; line-height: 16px; float: left; font-weight: bold;width:90%;}
+.moduleHeader .option {padding: 2px 3px; float: right; cursor: pointer; text-decoration: none;}
+.moduleHeader .close {padding: 2px 3px; float: right; cursor: pointer; text-decoration: none;display:none;}
+.module_body {font-size: 9pt;margin: 0 !important; width: 98% !important; overflow-x: hidden !important; padding: 10px 1% !important;}
+.moduleFooter {padding: 0; text-align: center; font-size: 12px; margin-bottom: 10px;}
+.module_page{display:none;}
+
+.PageLinkDisable{
+   color:#CCCCCC !important;
+}
+
+.city{
+   font-size:12pt;
+   font-weight:bold;
+   padding-right:3px;
+   cursor:pointer;
+}
+
+.weather{
+   border:1px #dedcd8 solid;padding:15px;margin-top:5px;margin-bottom:5px;
+}
+
+.hours:link{color: #333333; text-decoration: none;border:1px solid;padding:2px;padding-top:0px;}
+.hours:visited {color: #333333; text-decoration: none;border:1px solid;padding:2px;padding-top:0px;}
+.hours:hover {color: #333333; text-decoration: underline;border:1px solid;padding:2px;padding-top:0px;}
+.hours:active {color: #333333; text-decoration: underline;border:1px solid;padding:2px;padding-top:0px;}
+
+.hours_current{border:1px solid;padding:2px;padding-top:0px;}
