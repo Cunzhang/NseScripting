@@ -7,7 +7,7 @@ def ExtractFile( dir ):
 	p=re.compile(dir)
 	for root,dirs,files in os.walk(dir):
 		for f in files:
-			print '\x1b[0;32m' + (os.path.join(root.replace(dir+'/webroot',''),f)).replace('\\','/') + '\x1b[0m'
+			print (os.path.join(root.replace(dir,''),f)).replace('\\','/')
         
 			
 if __name__ == "__main__":
