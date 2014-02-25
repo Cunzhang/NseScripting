@@ -139,7 +139,7 @@
     </Info>
   </Vulnerability>
 
-<Vulnerability>
+  <Vulnerability>
     <Name>base64_decode</Name>
     <Info>
       <Severity>Low</Severity>
@@ -149,12 +149,22 @@
     </Info>
   </Vulnerability>
 
-<Vulnerability>
+  <Vulnerability>
     <Name>is_numeric</Name>
     <Info>
       <Severity>Low</Severity>
       <Description>
       this function can be used to bypass some anti-sqli via hex or bin
+      </Description>
+    </Info>
+  </Vulnerability>
+
+  <Vulnerability>
+    <Name>iconv</Name>
+    <Info>
+      <Severity>Low</Severity>
+      <Description>
+      this function can be truncat when encount unrecognize char
       </Description>
     </Info>
   </Vulnerability>
